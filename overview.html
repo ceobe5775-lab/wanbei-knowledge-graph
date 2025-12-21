@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据概览 - 皖北军事环境成因知识图谱平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🗺️</span>
+                <span class="logo-text">知识图谱平台</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="overview.html" class="nav-link active">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
+                <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
+                <li><a href="persons.html" class="nav-link">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <div class="page-container">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">数据概览</h1>
+                <p class="page-subtitle">皖北军事环境成因知识图谱平台数据统计</p>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="container">
+                <!-- 统计数据 -->
+                <div class="stats-section">
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="stat-label">历史事件节点</div>
+                            <div class="stat-value" data-target="0" data-type="events">0</div>
+                            <div class="stat-unit">项</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">历史人物节点</div>
+                            <div class="stat-value" data-target="0" data-type="persons">0</div>
+                            <div class="stat-unit">位</div>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="stat-label">地理地点节点</div>
+                            <div class="stat-value" data-target="0" data-type="locations">0</div>
+                            <div class="stat-unit">个</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">时间节点</div>
+                            <div class="stat-value" data-target="0" data-type="times">0</div>
+                            <div class="stat-unit">个</div>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="stat-label">关系连接</div>
+                            <div class="stat-value" data-target="0" data-type="relationships">0</div>
+                            <div class="stat-unit">条</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">总节点数</div>
+                            <div class="stat-value" data-target="0" data-type="total_nodes">0</div>
+                            <div class="stat-unit">个</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 数据分类 -->
+                <div class="data-categories">
+                    <div class="category-card">
+                        <div class="category-icon">📅</div>
+                        <h3>历史事件</h3>
+                        <p>涵盖1930-1950年代皖北地区重要军事历史事件</p>
+                        <a href="events.html" class="category-link">查看事件列表 →</a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">👥</div>
+                        <h3>历史人物</h3>
+                        <p>军事指挥官、政治人物及相关历史人物</p>
+                        <a href="persons.html" class="category-link">查看人物列表 →</a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">📍</div>
+                        <h3>地理地点</h3>
+                        <p>皖北地区重要地理位置和军事要地</p>
+                        <a href="map.html" class="category-link">查看地图 →</a>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🔗</div>
+                        <h3>关系网络</h3>
+                        <p>事件、人物、地点之间的复杂关系网络</p>
+                        <a href="knowledgeGraph.html" class="category-link">查看图谱 →</a>
+                    </div>
+                </div>
+
+                <!-- 数据详情链接 -->
+                <div class="detail-links">
+                    <a href="eventList.html" class="detail-link-card">
+                        <div class="link-icon">📋</div>
+                        <div class="link-content">
+                            <h3>事件列表</h3>
+                            <p>查看所有历史事件的详细信息</p>
+                        </div>
+                    </a>
+                    <a href="personList.html" class="detail-link-card">
+                        <div class="link-icon">👤</div>
+                        <div class="link-content">
+                            <h3>人物列表</h3>
+                            <p>查看所有历史人物的详细信息</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <span>丨</span>
+                <a href="overview.html">数据概览</a>
+                <span>丨</span>
+                <a href="events.html">历史事件</a>
+                <span>丨</span>
+                <a href="map.html">地理地图</a>
+                <span>丨</span>
+                <a href="persons.html">人物名片</a>
+            </div>
+            <p class="footer-copyright">©2025 皖北军事环境成因知识图谱平台</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="page-scripts.js"></script>
+    <script src="stats-loader.js"></script>
+    <script src="data-loader.js"></script>
+</body>
+</html>

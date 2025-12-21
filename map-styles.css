@@ -1,0 +1,94 @@
+/* 地图页面专用样式 */
+
+.map-container {
+    position: relative;
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+    min-height: 600px;
+}
+
+#map {
+    width: 100%;
+    height: 600px;
+    border-radius: 12px;
+}
+
+.map-legend {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 0.9rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Leaflet 弹窗样式 */
+.leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+}
+
+.leaflet-popup-content {
+    margin: 15px;
+    line-height: 1.6;
+}
+
+.leaflet-popup-content h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.leaflet-popup-content p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* 标记点样式 */
+.leaflet-marker-icon {
+    border-radius: 50%;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    #map {
+        height: 400px;
+    }
+    
+    .map-legend {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

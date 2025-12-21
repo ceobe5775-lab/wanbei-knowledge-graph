@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时文件
+*.log
+*.tmp
+temp/
+tmp/
+
+# 批处理文件（本地使用，不需要部署）
+*.bat
+
+# 数据文件（如果数据很大，可以考虑不提交）
+# data_*.json
+# 注意：如果数据文件需要在线访问，不要忽略它们
+
+# 其他
+output.txt
+*.bak
+

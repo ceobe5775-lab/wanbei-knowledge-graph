@@ -1,0 +1,2478 @@
+{
+  "dataset": "花园口决堤",
+  "summary": {
+    "total_nodes": 83,
+    "total_relationships": 100,
+    "events": 29,
+    "persons": 23,
+    "locations": 31,
+    "times": 0
+  },
+  "nodes": [
+    {
+      "id": "n1",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "蒋介石",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n2",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "陈果夫",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n3",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "冯·法肯豪森",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n4",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "程替",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n5",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "黄新吾",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n6",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "何成璞",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n7",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "姚琮",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n8",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "刘仲元",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n9",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "谢承杰",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n10",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "冯玉祥",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n11",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "王若卿",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n12",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "白崇禧",
+        "lat": 30.57288,
+        "lng": 114.30579,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n13",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "陈慰儒",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n14",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "朱镛",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n15",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "程潜",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n16",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "喻育之",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n17",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "张钫",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n18",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "张冲",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n19",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "陈调元",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n20",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "谷正纲",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n21",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "郭仲隗",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n22",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "胡宗南",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "n23",
+      "labels": [
+        "人物",
+        "花园口"
+      ],
+      "properties": {
+        "name": "汤恩伯",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l24",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "郑州",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l25",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "开封",
+        "lat": 34.8,
+        "lng": 114.3,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l26",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "徐州",
+        "lat": 34.26667,
+        "lng": 117.56667,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l27",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "武汉",
+        "lat": 30.57288,
+        "lng": 114.30579,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l28",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "南京",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l29",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "合肥",
+        "lat": 32.84,
+        "lng": 117.23,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l30",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "安庆",
+        "lat": 30.54,
+        "lng": 117.05,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l31",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "芜湖",
+        "lat": 31.34,
+        "lng": 118.37,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l32",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "镇江",
+        "lat": 32.21,
+        "lng": 119.44,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l33",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "沧州",
+        "lat": 38.31,
+        "lng": 116.87,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l34",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "保定",
+        "lat": 38.88,
+        "lng": 115.48,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l35",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "亳州",
+        "lat": 32.86667,
+        "lng": 115.78333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l36",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "蚌埠",
+        "lat": 32.93333,
+        "lng": 117.36667,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l37",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "淮南",
+        "lat": 32.6,
+        "lng": 116.8,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l38",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "淮北",
+        "lat": 32.93333,
+        "lng": 116.8,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l39",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "阜阳",
+        "lat": 32.9,
+        "lng": 115.8,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l40",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "中原",
+        "lat": 34.5,
+        "lng": 113.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l41",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "华中",
+        "lat": 30.5,
+        "lng": 114.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l42",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "华东",
+        "lat": 31.5,
+        "lng": 118.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l43",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l44",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "黄泛区",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l45",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "黄河",
+        "lat": 34.8,
+        "lng": 114.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l46",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "淮河",
+        "lat": 32.6,
+        "lng": 116.0,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l47",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "长江",
+        "lat": 30.5,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l48",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "花园口",
+        "lat": 34.8,
+        "lng": 114.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l49",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "中牟县",
+        "lat": 34.8,
+        "lng": 114.8,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l50",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "兰封",
+        "lat": 34.8,
+        "lng": 114.3,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l51",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "台儿庄",
+        "lat": 34.76667,
+        "lng": 117.85,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l52",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "陇海线",
+        "lat": 34.5,
+        "lng": 113.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l53",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "平汉线",
+        "lat": 30.5,
+        "lng": 114.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "l54",
+      "labels": [
+        "地点",
+        "花园口"
+      ],
+      "properties": {
+        "name": "津浦线",
+        "lat": 32.0,
+        "lng": 117.0,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "e55",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "台儿庄大捷",
+        "lat": 34.76667,
+        "lng": 117.85,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "e56",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "徐州会战",
+        "lat": 34.26667,
+        "lng": 117.56667,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.499692"
+      }
+    },
+    {
+      "id": "e57",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "徐州沦陷",
+        "lat": 34.26667,
+        "lng": 117.56667,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e58",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "花园口决堤",
+        "lat": 34.8,
+        "lng": 114.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e59",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "兰封战役",
+        "lat": 34.8,
+        "lng": 114.3,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e60",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "开封沦陷",
+        "lat": 34.8,
+        "lng": 114.3,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e61",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "中牟战役",
+        "lat": 34.8,
+        "lng": 114.8,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e62",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "日军损失",
+        "lat": 34.8,
+        "lng": 114.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e63",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "日军救援行动",
+        "lat": 34.8,
+        "lng": 114.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e64",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "日军空运补给",
+        "lat": 34.8,
+        "lng": 114.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e65",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "国民参政会第1届第1次会议",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e66",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "武汉会战",
+        "lat": 30.57288,
+        "lng": 114.30579,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e67",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "黄泛灾害",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e68",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "豫中会战",
+        "lat": 34.26667,
+        "lng": 112.63333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e69",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "灵宝战役",
+        "lat": 34.6,
+        "lng": 111.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e70",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北黄泛区形成",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e71",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "亳州黄泛灾害",
+        "lat": 32.86667,
+        "lng": 115.78333,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e72",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北耕地淹没",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e73",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "蚌埠地区洪水泛滥",
+        "lat": 32.93333,
+        "lng": 117.36667,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e74",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "淮南地区洪水泛滥",
+        "lat": 32.6,
+        "lng": 116.8,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e75",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "淮北地区洪水泛滥",
+        "lat": 32.93333,
+        "lng": 116.8,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e76",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "阜阳地区洪水泛滥",
+        "lat": 32.9,
+        "lng": 115.8,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e77",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北难民大规模流离失所",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e78",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北粮食短缺危机",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e79",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北疾病流行",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e80",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北社会秩序混乱",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e81",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "国民参政会救灾议案",
+        "lat": 32.06004,
+        "lng": 118.79688,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e82",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北灾民垦荒运动",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    },
+    {
+      "id": "e83",
+      "labels": [
+        "事件",
+        "花园口"
+      ],
+      "properties": {
+        "name": "皖北黄泛区生态环境恶化",
+        "lat": 32.8,
+        "lng": 115.5,
+        "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+        "import_time": "2025-12-20T19:40:21.500689"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": {
+        "name": "蒋介石"
+      },
+      "target": {
+        "name": "陈果夫"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "蒋介石"
+      },
+      "target": {
+        "name": "程替"
+      },
+      "type": "指挥",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "蒋介石"
+      },
+      "target": {
+        "name": "黄新吾"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "蒋介石"
+      },
+      "target": {
+        "name": "何成璞"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "蒋介石"
+      },
+      "target": {
+        "name": "姚琮"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "蒋介石"
+      },
+      "target": {
+        "name": "冯玉祥"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "蒋介石"
+      },
+      "target": {
+        "name": "白崇禧"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "程替"
+      },
+      "target": {
+        "name": "黄新吾"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "程替"
+      },
+      "target": {
+        "name": "何成璞"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "程替"
+      },
+      "target": {
+        "name": "姚琮"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "黄新吾"
+      },
+      "target": {
+        "name": "何成璞"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "黄新吾"
+      },
+      "target": {
+        "name": "姚琮"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "何成璞"
+      },
+      "target": {
+        "name": "姚琮"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "冯玉祥"
+      },
+      "target": {
+        "name": "蒋介石"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "白崇禧"
+      },
+      "target": {
+        "name": "蒋介石"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "刘仲元"
+      },
+      "target": {
+        "name": "蒋介石"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "刘仲元"
+      },
+      "target": {
+        "name": "程替"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "谢承杰"
+      },
+      "target": {
+        "name": "刘仲元"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "谢承杰"
+      },
+      "target": {
+        "name": "程替"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "王若卿"
+      },
+      "target": {
+        "name": "蒋介石"
+      },
+      "type": "建议",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "程潜"
+      },
+      "target": {
+        "name": "蒋介石"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "胡宗南"
+      },
+      "target": {
+        "name": "蒋介石"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "汤恩伯"
+      },
+      "target": {
+        "name": "蒋介石"
+      },
+      "type": "协作",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "花园口"
+      },
+      "target": {
+        "name": "郑州"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "花园口"
+      },
+      "target": {
+        "name": "黄河"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "郑州"
+      },
+      "target": {
+        "name": "中原"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "开封"
+      },
+      "target": {
+        "name": "中原"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "徐州"
+      },
+      "target": {
+        "name": "中原"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "武汉"
+      },
+      "target": {
+        "name": "华中"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.500689"
+    },
+    {
+      "source": {
+        "name": "安庆"
+      },
+      "target": {
+        "name": "华东"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄河"
+      },
+      "target": {
+        "name": "郑州"
+      },
+      "type": "流经",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "淮河"
+      },
+      "target": {
+        "name": "皖北"
+      },
+      "type": "流经",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "长江"
+      },
+      "target": {
+        "name": "武汉"
+      },
+      "type": "流经",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "长江"
+      },
+      "target": {
+        "name": "安庆"
+      },
+      "type": "流经",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄泛区"
+      },
+      "target": {
+        "name": "皖北"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "中牟县"
+      },
+      "target": {
+        "name": "郑州"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "兰封"
+      },
+      "target": {
+        "name": "开封"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "台儿庄"
+      },
+      "target": {
+        "name": "徐州"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "陇海线"
+      },
+      "target": {
+        "name": "郑州"
+      },
+      "type": "经过",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "平汉线"
+      },
+      "target": {
+        "name": "武汉"
+      },
+      "type": "经过",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "亳州"
+      },
+      "target": {
+        "name": "皖北"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "蚌埠"
+      },
+      "target": {
+        "name": "皖北"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "淮南"
+      },
+      "target": {
+        "name": "皖北"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "淮北"
+      },
+      "target": {
+        "name": "皖北"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "合肥"
+      },
+      "target": {
+        "name": "皖北"
+      },
+      "type": "位于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "沧州"
+      },
+      "target": {
+        "name": "徐州会战"
+      },
+      "type": "战线",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "保定"
+      },
+      "target": {
+        "name": "徐州会战"
+      },
+      "type": "战线",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "津浦线"
+      },
+      "target": {
+        "name": "南京"
+      },
+      "type": "经过",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "皖北"
+      },
+      "target": {
+        "name": "黄泛灾害"
+      },
+      "type": "受灾",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "台儿庄大捷"
+      },
+      "target": {
+        "name": "徐州会战"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "徐州会战"
+      },
+      "target": {
+        "name": "徐州沦陷"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "徐州沦陷"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "兰封战役"
+      },
+      "target": {
+        "name": "徐州会战"
+      },
+      "type": "发生于",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "兰封战役"
+      },
+      "target": {
+        "name": "开封沦陷"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "开封沦陷"
+      },
+      "target": {
+        "name": "中牟战役"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "中牟战役"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "花园口决堤"
+      },
+      "target": {
+        "name": "日军损失"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "日军损失"
+      },
+      "target": {
+        "name": "日军救援行动"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "日军救援行动"
+      },
+      "target": {
+        "name": "日军空运补给"
+      },
+      "type": "包括",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "花园口决堤"
+      },
+      "target": {
+        "name": "武汉会战"
+      },
+      "type": "影响",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "武汉会战"
+      },
+      "target": {
+        "name": "豫中会战"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "豫中会战"
+      },
+      "target": {
+        "name": "灵宝战役"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "花园口决堤"
+      },
+      "target": {
+        "name": "黄泛灾害"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄泛灾害"
+      },
+      "target": {
+        "name": "皖北黄泛区形成"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "皖北黄泛区形成"
+      },
+      "target": {
+        "name": "亳州黄泛灾害"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "皖北黄泛区形成"
+      },
+      "target": {
+        "name": "皖北耕地淹没"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "皖北黄泛区形成"
+      },
+      "target": {
+        "name": "蚌埠地区洪水泛滥"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "皖北黄泛区形成"
+      },
+      "target": {
+        "name": "淮南地区洪水泛滥"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "皖北黄泛区形成"
+      },
+      "target": {
+        "name": "淮北地区洪水泛滥"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "皖北黄泛区形成"
+      },
+      "target": {
+        "name": "阜阳地区洪水泛滥"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄泛灾害"
+      },
+      "target": {
+        "name": "皖北难民大规模流离失所"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄泛灾害"
+      },
+      "target": {
+        "name": "皖北粮食短缺危机"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄泛灾害"
+      },
+      "target": {
+        "name": "皖北疾病流行"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄泛灾害"
+      },
+      "target": {
+        "name": "皖北社会秩序混乱"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄泛灾害"
+      },
+      "target": {
+        "name": "皖北黄泛区生态环境恶化"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄泛灾害"
+      },
+      "target": {
+        "name": "国民参政会第1届第1次会议"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "国民参政会第1届第1次会议"
+      },
+      "target": {
+        "name": "国民参政会救灾议案"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "国民参政会救灾议案"
+      },
+      "target": {
+        "name": "皖北灾民垦荒运动"
+      },
+      "type": "导致",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "陈果夫"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "冯·法肯豪森"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "程替"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "黄新吾"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "何成璞"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "姚琮"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "陈慰儒"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "朱镛"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "刘仲元"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "谢承杰"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "王若卿"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "程潜"
+      },
+      "target": {
+        "name": "武汉会战"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "胡宗南"
+      },
+      "target": {
+        "name": "豫中会战"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "汤恩伯"
+      },
+      "target": {
+        "name": "豫中会战"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "张钫"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "张冲"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "程潜"
+      },
+      "target": {
+        "name": "郑州"
+      },
+      "type": "驻地",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "胡宗南"
+      },
+      "target": {
+        "name": "中原"
+      },
+      "type": "驻地",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "陈调元"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "谷正纲"
+      },
+      "target": {
+        "name": "花园口决堤"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "喻育之"
+      },
+      "target": {
+        "name": "国民参政会救灾议案"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    },
+    {
+      "source": {
+        "name": "郭仲隗"
+      },
+      "target": {
+        "name": "国民参政会救灾议案"
+      },
+      "type": "参与",
+      "source_var": "a",
+      "target_var": "b",
+      "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher",
+      "import_time": "2025-12-20T19:40:21.501686"
+    }
+  ],
+  "data_source": "花园口决堤_Neo4j导入脚本_最终版.cypher"
+}

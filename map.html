@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地理地图 - 皖北军事环境成因知识图谱平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🗺️</span>
+                <span class="logo-text">知识图谱平台</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="overview.html" class="nav-link">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link active">地理地图</a></li>
+                <li><a href="persons.html" class="nav-link">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <div class="page-container">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">地理地图</h1>
+                <p class="page-subtitle">皖北地区历史事件地理分布可视化</p>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="container">
+                <!-- 地图控制面板 -->
+                <div class="map-controls">
+                    <div class="control-group">
+                        <label>显示模式</label>
+                        <div class="control-buttons">
+                            <button class="control-btn active">地图展示</button>
+                            <button class="control-btn">列表展示</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label>选择事件类型</label>
+                        <select class="control-select">
+                            <option>全部事件</option>
+                            <option>军事事件</option>
+                            <option>地理变迁</option>
+                            <option>社会事件</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>选择时间范围</label>
+                        <select class="control-select">
+                            <option>全部时间</option>
+                            <option>1930-1940年</option>
+                            <option>1940-1945年</option>
+                            <option>1945-1950年</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>选择城市</label>
+                        <select class="control-select">
+                            <option>全部城市</option>
+                            <option>合肥</option>
+                            <option>蚌埠</option>
+                            <option>阜阳</option>
+                            <option>宿州</option>
+                            <option>亳州</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 地图容器 -->
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            <div class="map-icon">🗺️</div>
+                            <h3>地图展示区域</h3>
+                            <p>这里将显示基于 Leaflet 的交互式地图</p>
+                            <p class="map-note">支持标记点、筛选、详情查看等功能</p>
+                            <div class="map-markers-preview">
+                                <div class="marker-preview marker-event">事件</div>
+                                <div class="marker-preview marker-person">人物</div>
+                                <div class="marker-preview marker-location">地点</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 地图列表（可选） -->
+                <div class="map-list" style="display: none;">
+                    <div class="list-item">
+                        <div class="item-icon">📍</div>
+                        <div class="item-content">
+                            <h3>花园口</h3>
+                            <p>河南省郑州市，1938年花园口决堤事件发生地</p>
+                            <div class="item-tags">
+                                <span class="tag">军事事件</span>
+                                <span class="tag">地理变迁</span>
+                            </div>
+                        </div>
+                        <a href="mapDetail.html?id=1" class="item-link">查看详情 →</a>
+                    </div>
+                    <div class="list-item">
+                        <div class="item-icon">📍</div>
+                        <div class="item-content">
+                            <h3>淮海战役主战场</h3>
+                            <p>皖北及周边地区，1948-1949年重大战役</p>
+                            <div class="item-tags">
+                                <span class="tag">重大战役</span>
+                                <span class="tag">战略要地</span>
+                            </div>
+                        </div>
+                        <a href="mapDetail.html?id=2" class="item-link">查看详情 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <span>丨</span>
+                <a href="overview.html">数据概览</a>
+                <span>丨</span>
+                <a href="events.html">历史事件</a>
+                <span>丨</span>
+                <a href="map.html">地理地图</a>
+                <span>丨</span>
+                <a href="persons.html">人物名片</a>
+            </div>
+            <p class="footer-copyright">©2025 皖北军事环境成因知识图谱平台</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="page-scripts.js"></script>
+    <script>
+        // 重定向到交互式地图
+        window.location.href = 'map-interactive.html';
+    </script>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>皖北军事环境成因知识图谱平台 - 项目展示</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🗺️</span>
+                <span class="logo-text">知识图谱平台</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">首页</a></li>
+                <li><a href="overview.html" class="nav-link">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
+                <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
+                <li><a href="persons.html" class="nav-link">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 Hero 区域 -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">皖北军事环境成因</span>
+                    <span class="title-line">知识图谱平台</span>
+                </h1>
+                <p class="hero-subtitle">基于 Neo4j 图数据库的历史事件可视化分析系统</p>
+                <div class="hero-buttons">
+                    <a href="overview.html" class="btn btn-primary">数据概览</a>
+                    <a href="knowledgeGraph.html" class="btn btn-secondary">知识图谱</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-type="total_nodes">加载中...</div>
+                        <div class="stat-label">历史节点</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-type="total_relationships">加载中...</div>
+                        <div class="stat-label">关系连接</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-type="events">加载中...</div>
+                        <div class="stat-label">历史事件</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- 项目介绍 -->
+    <section class="intro">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">项目概述</h2>
+                <p class="section-subtitle">基于论文《文旅融合视角下皖北军事环境成因及数字传播方法研究》构建的知识图谱可视化平台</p>
+            </div>
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <div class="card-icon">📚</div>
+                    <h3>学术研究</h3>
+                    <p>为历史地理学领域的学术研究者提供便捷、高效的数字工具，帮助理解事件之间的时空关系与人物参与的历史背景</p>
+                </div>
+                <div class="intro-card">
+                    <div class="card-icon">🔍</div>
+                    <h3>数据可视化</h3>
+                    <p>结合知识图谱与地理地图，实现历史事件、人物、地点的多维度可视化展示与交互分析</p>
+                </div>
+                <div class="intro-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>数字传播</h3>
+                    <p>支持数据上传、查询、可视化分析等功能，可嵌入至展览、数据库门户或文旅系统中</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能特色 -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">核心功能</h2>
+                <p class="section-subtitle">强大的功能模块，满足历史数据研究的多方面需求</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>知识图谱可视化</h3>
+                    <ul class="feature-list">
+                        <li>使用 Cytoscape.js 实现图谱节点与连线的交互显示</li>
+                        <li>悬停查看属性，点击展开详情</li>
+                        <li>支持节点筛选与关系探索</li>
+                        <li>可导出图谱子集为图片</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>地理地图展示</h3>
+                    <ul class="feature-list">
+                        <li>使用 Leaflet 显示事件的地理分布</li>
+                        <li>支持坐标聚合与筛选</li>
+                        <li>基于时间/人物/地点的多维度筛选</li>
+                        <li>历史地图图层切换功能</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <h3>数据上传管理</h3>
+                    <ul class="feature-list">
+                        <li>支持 CSV / JSON 格式上传</li>
+                        <li>自动解析字段并检查格式正确性</li>
+                        <li>管理员上传后将数据写入数据库</li>
+                        <li>显示上传记录与构建状态</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔎</div>
+                    <h3>智能查询筛选</h3>
+                    <ul class="feature-list">
+                        <li>支持关键词检索（事件名、人名、地点、时间范围）</li>
+                        <li>条件组合查询（如：1940年前、某人、某地）</li>
+                        <li>查询结果可在图谱与地图模块中同步高亮</li>
+                        <li>支持模糊匹配与精确查询</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>时间轴视图</h3>
+                    <ul class="feature-list">
+                        <li>时间维度的事件展示</li>
+                        <li>支持时间范围筛选</li>
+                        <li>事件发展链条演绎</li>
+                        <li>历史时间线可视化</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>关系分析</h3>
+                    <ul class="feature-list">
+                        <li>人物参与事件关系（participated_in）</li>
+                        <li>事件发生地关系（occurred_at）</li>
+                        <li>人物与人物/事件与事件间的衍生关系</li>
+                        <li>多坐标处理与地理实体连接</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术架构 -->
+    <section id="architecture" class="architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">技术架构</h2>
+                <p class="section-subtitle">现代化的技术栈，确保系统的稳定性和可扩展性</p>
+            </div>
+            <div class="arch-diagram">
+                <div class="arch-layer">
+                    <div class="layer-title">前端展示层</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Cytoscape.js</span>
+                        <span class="tech-tag">Leaflet</span>
+                        <span class="tech-tag">Material-UI</span>
+                        <span class="tech-tag">Ant Design</span>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="layer-title">后端服务层</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pydantic</span>
+                        <span class="tech-tag">RESTful API</span>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="layer-title">数据存储层</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Neo4j</span>
+                        <span class="tech-tag">图数据库</span>
+                        <span class="tech-tag">Cypher 查询</span>
+                        <span class="tech-tag">Bolt 协议</span>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="layer-title">数据源</div>
+                    <div class="tech-tags">
+                        <span class="tech-tag">CSV/JSON</span>
+                        <span class="tech-tag">历史档案</span>
+                        <span class="tech-tag">地理坐标</span>
+                    </div>
+                </div>
+            </div>
+            <div class="arch-features">
+                <div class="arch-feature">
+                    <h4>🔄 模块化设计</h4>
+                    <p>前后端分离，接口标准化，易于维护和扩展</p>
+                </div>
+                <div class="arch-feature">
+                    <h4>⚡ 高性能</h4>
+                    <p>图数据库查询优化，支持大规模数据可视化</p>
+                </div>
+                <div class="arch-feature">
+                    <h4>🔧 可扩展</h4>
+                    <p>预留实体/关系类型扩展与地理坐标图层扩展功能</p>
+                </div>
+                <div class="arch-feature">
+                    <h4>📦 易部署</h4>
+                    <p>支持 Docker 容器化部署，一键启动服务</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用指南 -->
+    <section id="guide" class="guide">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">快速开始</h2>
+                <p class="section-subtitle">简单几步，快速部署和使用平台</p>
+            </div>
+            <div class="guide-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>环境准备</h3>
+                    <div class="step-content">
+                        <p><strong>系统要求：</strong></p>
+                        <ul>
+                            <li>Python >= 3.9</li>
+                            <li>Node.js >= 18</li>
+                            <li>Neo4j Desktop 或 Docker</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>安装依赖</h3>
+                    <div class="step-content">
+                        <pre><code># 后端依赖
+cd backend
+pip install -r requirements.txt
+
+# 前端依赖
+cd ../frontend
+npm install</code></pre>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>启动 Neo4j</h3>
+                    <div class="step-content">
+                        <p>使用 Neo4j Desktop 或 Docker 启动图数据库服务</p>
+                        <p>配置数据库连接信息（默认：bolt://localhost:7687）</p>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>启动服务</h3>
+                    <div class="step-content">
+                        <pre><code># 启动后端（端口 8002）
+cd backend
+python app.py
+
+# 启动前端（端口 3000）
+cd frontend
+npm start</code></pre>
+                    </div>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>访问平台</h3>
+                    <div class="step-content">
+                        <p>打开浏览器访问：<strong>http://localhost:3000</strong></p>
+                        <p>开始上传数据、构建图谱、进行可视化分析</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目演示 - 数据概览 -->
+    <section id="demo" class="demo-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">项目数据概览</h2>
+                <p class="section-subtitle">基于 Neo4j 图数据库构建的皖北军事历史知识图谱</p>
+            </div>
+            <div class="demo-stats-grid">
+                <div class="demo-stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <div class="stat-big-number" data-target="2065">0</div>
+                        <div class="stat-label">知识图谱节点</div>
+                        <div class="stat-detail">包含事件、人物、地点等实体</div>
+                    </div>
+                </div>
+                <div class="demo-stat-card">
+                    <div class="stat-icon">🔗</div>
+                    <div class="stat-content">
+                        <div class="stat-big-number" data-target="5000">0</div>
+                        <div class="stat-label">关系连接</div>
+                        <div class="stat-detail">参与、发生、关联等关系</div>
+                    </div>
+                </div>
+                <div class="demo-stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <div class="stat-big-number" data-target="100">0</div>
+                        <div class="stat-label">历史事件</div>
+                        <div class="stat-detail">涵盖多个历史时期</div>
+                    </div>
+                </div>
+                <div class="demo-stat-card">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-content">
+                        <div class="stat-big-number" data-target="500">0</div>
+                        <div class="stat-label">历史人物</div>
+                        <div class="stat-detail">军事指挥官、政治人物等</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目演示 - 核心功能展示 -->
+    <section class="demo-features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">核心功能演示</h2>
+                <p class="section-subtitle">六大核心功能模块，全方位展示平台能力</p>
+            </div>
+            
+            <!-- 功能模块 1: 知识图谱 -->
+            <div class="demo-module">
+                <div class="demo-module-header">
+                    <div class="module-icon">📊</div>
+                    <div class="module-info">
+                        <h3>知识图谱可视化</h3>
+                        <p>使用 Cytoscape.js 实现的交互式知识图谱，支持节点探索、关系查询、路径分析</p>
+                    </div>
+                </div>
+                <div class="demo-module-content">
+                    <div class="demo-features-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>节点类型：事件、人物、地点、时间</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>关系类型：参与、发生、关联、包含</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>交互功能：缩放、拖拽、筛选、搜索</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>可视化：节点大小、颜色、连线样式</span>
+                        </div>
+                    </div>
+                    <div class="demo-preview">
+                        <div class="preview-placeholder graph-preview">
+                            <div class="preview-content">
+                                <div class="preview-nodes">
+                                    <div class="preview-node node-event">事件节点</div>
+                                    <div class="preview-node node-person">人物节点</div>
+                                    <div class="preview-node node-location">地点节点</div>
+                                </div>
+                                <div class="preview-connections">
+                                    <div class="connection-line"></div>
+                                    <div class="connection-line"></div>
+                                </div>
+                                <p class="preview-text">知识图谱交互展示</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能模块 2: 地理地图 -->
+            <div class="demo-module">
+                <div class="demo-module-header">
+                    <div class="module-icon">🗺️</div>
+                    <div class="module-info">
+                        <h3>地理地图展示</h3>
+                        <p>基于 Leaflet 的地理信息可视化，展示历史事件的空间分布和地理关系</p>
+                    </div>
+                </div>
+                <div class="demo-module-content">
+                    <div class="demo-features-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>地图标记：事件、人物、地点标记点</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>筛选功能：按时间、类型、朝代筛选</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>历史地图：支持历史地图图层切换</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>聚合显示：标记点聚合和详细信息</span>
+                        </div>
+                    </div>
+                    <div class="demo-preview">
+                        <div class="preview-placeholder map-preview">
+                            <div class="preview-content">
+                                <div class="map-markers">
+                                    <div class="map-marker marker-red"></div>
+                                    <div class="map-marker marker-yellow"></div>
+                                    <div class="map-marker marker-green"></div>
+                                </div>
+                                <p class="preview-text">地理地图标记展示</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能模块 3: 时间轴 -->
+            <div class="demo-module">
+                <div class="demo-module-header">
+                    <div class="module-icon">⏱️</div>
+                    <div class="module-info">
+                        <h3>时间轴视图</h3>
+                        <p>时间维度的事件展示，支持时间范围筛选和历史发展链条演绎</p>
+                    </div>
+                </div>
+                <div class="demo-module-content">
+                    <div class="demo-features-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>时间线：按时间顺序展示历史事件</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>时间筛选：支持选择时间范围</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>事件链条：展示事件之间的因果关系</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>动画演示：支持事件发展动画</span>
+                        </div>
+                    </div>
+                    <div class="demo-preview">
+                        <div class="preview-placeholder timeline-preview">
+                            <div class="preview-content">
+                                <div class="timeline-line">
+                                    <div class="timeline-point"></div>
+                                    <div class="timeline-point"></div>
+                                    <div class="timeline-point"></div>
+                                </div>
+                                <p class="preview-text">时间轴事件展示</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能模块 4: 智能查询 -->
+            <div class="demo-module">
+                <div class="demo-module-header">
+                    <div class="module-icon">🔍</div>
+                    <div class="module-info">
+                        <h3>智能查询系统</h3>
+                        <p>多条件组合查询，支持关键词检索、模糊匹配、精确查询</p>
+                    </div>
+                </div>
+                <div class="demo-module-content">
+                    <div class="demo-features-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>关键词搜索：事件名、人名、地点</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>条件组合：时间、类型、关系组合查询</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>结果高亮：查询结果同步高亮显示</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>模糊匹配：支持部分匹配和相似度搜索</span>
+                        </div>
+                    </div>
+                    <div class="demo-preview">
+                        <div class="preview-placeholder search-preview">
+                            <div class="preview-content">
+                                <div class="search-box">
+                                    <input type="text" placeholder="输入关键词搜索..." disabled>
+                                    <button disabled>搜索</button>
+                                </div>
+                                <p class="preview-text">智能查询界面</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能模块 5: 数据上传 -->
+            <div class="demo-module">
+                <div class="demo-module-header">
+                    <div class="module-icon">📤</div>
+                    <div class="module-info">
+                        <h3>数据上传管理</h3>
+                        <p>支持 CSV/JSON 格式上传，自动解析和验证数据格式</p>
+                    </div>
+                </div>
+                <div class="demo-module-content">
+                    <div class="demo-features-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>格式支持：CSV、JSON 数据格式</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>自动解析：字段自动识别和映射</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>数据验证：格式检查和错误提示</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>构建状态：实时显示构建进度</span>
+                        </div>
+                    </div>
+                    <div class="demo-preview">
+                        <div class="preview-placeholder upload-preview">
+                            <div class="preview-content">
+                                <div class="upload-area">
+                                    <div class="upload-icon">📁</div>
+                                    <p>拖拽文件或点击上传</p>
+                                </div>
+                                <p class="preview-text">数据上传界面</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 功能模块 6: 关系分析 -->
+            <div class="demo-module">
+                <div class="demo-module-header">
+                    <div class="module-icon">🔗</div>
+                    <div class="module-info">
+                        <h3>关系分析</h3>
+                        <p>深度挖掘实体之间的关系，支持路径查询和关系网络分析</p>
+                    </div>
+                </div>
+                <div class="demo-module-content">
+                    <div class="demo-features-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>关系类型：参与、发生、关联、包含</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>路径查询：查找实体间的最短路径</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>网络分析：关系网络的可视化分析</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>多坐标：支持一个事件多个地点</span>
+                        </div>
+                    </div>
+                    <div class="demo-preview">
+                        <div class="preview-placeholder relation-preview">
+                            <div class="preview-content">
+                                <div class="relation-network">
+                                    <div class="relation-node"></div>
+                                    <div class="relation-node"></div>
+                                    <div class="relation-node"></div>
+                                    <div class="relation-edge"></div>
+                                    <div class="relation-edge"></div>
+                                </div>
+                                <p class="preview-text">关系网络分析</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目演示 - 历史事件时间轴 -->
+    <section class="demo-timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">历史事件时间轴</h2>
+                <p class="section-subtitle">重要历史事件的时间线展示</p>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-year">1938年6月</div>
+                    <div class="timeline-content">
+                        <h3>花园口决堤</h3>
+                        <p>1938年6月9日，为阻止日军西进，国民党军队在郑州花园口炸开黄河大堤，造成黄河改道，形成大片黄泛区。这一事件对皖北地区产生了深远影响，改变了当地的地理环境和军事格局。</p>
+                        <div class="timeline-tags">
+                            <span class="tag">军事事件</span>
+                            <span class="tag">地理变迁</span>
+                            <span class="tag">皖北地区</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1940年</div>
+                    <div class="timeline-content">
+                        <h3>皖北地区军事活动</h3>
+                        <p>1940年，皖北地区成为抗日战争的重要战场。多支抗日武装力量在此活动，与日伪军展开激烈战斗。这一时期的军事活动对当地的社会结构和人口分布产生了重大影响。</p>
+                        <div class="timeline-tags">
+                            <span class="tag">抗日战争</span>
+                            <span class="tag">军事活动</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1945年</div>
+                    <div class="timeline-content">
+                        <h3>抗日战争胜利</h3>
+                        <p>1945年8月，抗日战争胜利结束。皖北地区经历了长期的战争洗礼，地理环境、人口结构、社会关系都发生了深刻变化。这些变化为后续的军事环境形成奠定了基础。</p>
+                        <div class="timeline-tags">
+                            <span class="tag">历史转折</span>
+                            <span class="tag">社会变迁</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1946-1949年</div>
+                    <div class="timeline-content">
+                        <h3>解放战争时期</h3>
+                        <p>解放战争期间，皖北地区再次成为重要战场。淮海战役等重大战役在此展开，大量军事行动和人员流动进一步塑造了当地的军事环境特征。</p>
+                        <div class="timeline-tags">
+                            <span class="tag">解放战争</span>
+                            <span class="tag">重大战役</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-more">
+                <button class="btn-more">查看更多历史事件</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目演示 - 访问提示 -->
+    <section class="demo-access">
+        <div class="container">
+            <div class="access-card">
+                <div class="access-icon">🚀</div>
+                <div class="access-content">
+                    <h3>体验完整功能</h3>
+                    <p>启动本地服务后，可在实际环境中体验所有功能模块</p>
+                    <div class="access-buttons">
+                        <a href="#guide" class="btn btn-primary">查看使用指南</a>
+                        <a href="http://localhost:3000" class="btn btn-secondary" target="_blank">访问平台</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据格式说明 -->
+    <section class="data-format">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">数据格式</h2>
+                <p class="section-subtitle">支持标准化的 CSV/JSON 数据格式</p>
+            </div>
+            <div class="format-cards">
+                <div class="format-card">
+                    <h3>事件数据 (events.csv)</h3>
+                    <pre><code>event_id, title, description, date, geo_id_list
+E001, 花园口决堤, 1938年黄河决堤事件, 1938-06-09, G001,G002</code></pre>
+                </div>
+                <div class="format-card">
+                    <h3>人物数据 (persons.csv)</h3>
+                    <pre><code>person_id, name, role, related_event_ids
+P001, 蒋介石, 军事指挥官, E001,E002</code></pre>
+                </div>
+                <div class="format-card">
+                    <h3>地理数据 (geo_coords.csv)</h3>
+                    <pre><code>geo_id, lat, lon, place_name, related_event_id
+G001, 34.8, 113.6, 花园口, E001</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>项目信息</h4>
+                    <p>皖北军事环境成因知识图谱平台</p>
+                    <p>基于论文《文旅融合视角下皖北军事环境成因及数字传播方法研究》</p>
+                </div>
+                <div class="footer-section">
+                    <h4>技术栈</h4>
+                    <p>React + FastAPI + Neo4j</p>
+                    <p>现代化 Web 技术栈</p>
+                </div>
+                <div class="footer-section">
+                    <h4>联系方式</h4>
+                    <p>项目地址：E:\新建文件夹</p>
+                    <p>本地访问：http://localhost:3000</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 皖北军事环境成因知识图谱平台. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="page-scripts.js"></script>
+    <script src="stats-loader.js"></script>
+</body>
+</html>

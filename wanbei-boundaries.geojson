@@ -1,0 +1,138 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "皖北地区",
+        "type": "region"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [115.0, 32.0],
+          [117.5, 32.0],
+          [118.0, 33.5],
+          [116.5, 34.5],
+          [115.0, 34.0],
+          [114.5, 33.0],
+          [115.0, 32.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "合肥市",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.8, 31.5],
+          [117.5, 31.5],
+          [117.5, 32.2],
+          [116.8, 32.2],
+          [116.8, 31.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "蚌埠市",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [117.0, 32.7],
+          [117.6, 32.7],
+          [117.6, 33.2],
+          [117.0, 33.2],
+          [117.0, 32.7]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "阜阳市",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [115.3, 32.5],
+          [116.2, 32.5],
+          [116.2, 33.5],
+          [115.3, 33.5],
+          [115.3, 32.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "宿州市",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.5, 33.3],
+          [117.5, 33.3],
+          [117.5, 34.2],
+          [116.5, 34.2],
+          [116.5, 33.3]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "亳州市",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [115.2, 33.5],
+          [116.2, 33.5],
+          [116.2, 34.2],
+          [115.2, 34.2],
+          [115.2, 33.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "淮南市",
+        "type": "city"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [116.5, 32.3],
+          [117.2, 32.3],
+          [117.2, 32.8],
+          [116.5, 32.8],
+          [116.5, 32.3]
+        ]]
+      }
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+

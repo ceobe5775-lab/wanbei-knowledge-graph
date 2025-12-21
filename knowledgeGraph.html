@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识图谱 - 皖北军事环境成因知识图谱平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🗺️</span>
+                <span class="logo-text">知识图谱平台</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="overview.html" class="nav-link">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
+                <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
+                <li><a href="persons.html" class="nav-link">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link active">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <div class="page-container">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">知识图谱</h1>
+                <p class="page-subtitle">皖北军事环境成因知识图谱可视化</p>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="container">
+                <!-- 搜索和筛选 -->
+                <div class="graph-controls">
+                    <div class="search-section">
+                        <input type="text" placeholder="请输入事件/人物/地点搜索..." class="graph-search">
+                        <button class="search-btn">搜索</button>
+                    </div>
+                    <div class="filter-section">
+                        <div class="filter-group">
+                            <label>节点类型</label>
+                            <div class="filter-checkboxes">
+                                <label><input type="checkbox" checked> 事件</label>
+                                <label><input type="checkbox" checked> 人物</label>
+                                <label><input type="checkbox" checked> 地点</label>
+                                <label><input type="checkbox" checked> 时间</label>
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label>关系类型</label>
+                            <div class="filter-checkboxes">
+                                <label><input type="checkbox" checked> 参与</label>
+                                <label><input type="checkbox" checked> 发生</label>
+                                <label><input type="checkbox" checked> 关联</label>
+                                <label><input type="checkbox" checked> 包含</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 图谱展示区域 -->
+                <div class="graph-container">
+                    <div class="graph-placeholder">
+                        <div class="graph-content">
+                            <div class="graph-icon">📊</div>
+                            <h3>知识图谱展示区域</h3>
+                            <p>这里将显示基于 Cytoscape.js 的交互式知识图谱</p>
+                            <p class="graph-note">支持节点探索、关系查询、路径分析等功能</p>
+                            <div class="graph-legend">
+                                <div class="legend-item">
+                                    <div class="legend-color event-color"></div>
+                                    <span>事件节点</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color person-color"></div>
+                                    <span>人物节点</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color location-color"></div>
+                                    <span>地点节点</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color time-color"></div>
+                                    <span>时间节点</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 图谱操作提示 -->
+                <div class="graph-tips">
+                    <h4>操作提示</h4>
+                    <ul>
+                        <li>点击节点查看详细信息</li>
+                        <li>拖拽节点调整位置</li>
+                        <li>滚轮缩放图谱</li>
+                        <li>使用搜索框快速定位节点</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <span>丨</span>
+                <a href="overview.html">数据概览</a>
+                <span>丨</span>
+                <a href="events.html">历史事件</a>
+                <span>丨</span>
+                <a href="map.html">地理地图</a>
+                <span>丨</span>
+                <a href="persons.html">人物名片</a>
+            </div>
+            <p class="footer-copyright">©2025 皖北军事环境成因知识图谱平台</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="page-scripts.js"></script>
+</body>
+</html>

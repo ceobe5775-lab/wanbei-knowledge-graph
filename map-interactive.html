@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地理地图 - 皖北军事环境成因知识图谱平台</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="stylesheet" href="map-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+            z-index: 1;
+        }
+        .map-legend {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🗺️</span>
+                <span class="logo-text">知识图谱平台</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="overview.html" class="nav-link">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link active">地理地图</a></li>
+                <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
+                <li><a href="persons.html" class="nav-link">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <div class="page-container">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">地理地图</h1>
+                <p class="page-subtitle">皖北地区历史事件地理分布可视化</p>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="container">
+                <!-- 地图控制面板 -->
+                <div class="map-controls">
+                    <div class="control-group">
+                        <label>显示模式</label>
+                        <div class="control-buttons">
+                            <button class="control-btn active" id="mapViewBtn">地图展示</button>
+                            <button class="control-btn" id="listViewBtn">列表展示</button>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label>选择事件类型</label>
+                        <select class="control-select" id="eventTypeFilter">
+                            <option value="all">全部事件</option>
+                            <option value="event">军事事件</option>
+                            <option value="person">人物</option>
+                            <option value="location">地点</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>选择数据集</label>
+                        <select class="control-select" id="datasetFilter">
+                            <option value="all">全部数据</option>
+                            <option value="花园口决堤">花园口决堤</option>
+                            <option value="淝水之战">淝水之战</option>
+                            <option value="双堆集战争">双堆集战争</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>选择城市</label>
+                        <select class="control-select" id="cityFilter">
+                            <option value="all">全部城市</option>
+                            <option value="亳州">亳州</option>
+                            <option value="淮北">淮北</option>
+                            <option value="阜阳">阜阳</option>
+                            <option value="宿州">宿州</option>
+                            <option value="蚌埠">蚌埠</option>
+                            <option value="淮南">淮南</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 地图容器 -->
+                <div class="map-container" id="mapContainer">
+                    <div id="map"></div>
+                    <div class="map-legend" style="position: absolute; bottom: 20px; right: 20px; z-index: 1000;">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #ef4444;"></div>
+                            <span>事件</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #f59e0b;"></div>
+                            <span>人物</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #10b981;"></div>
+                            <span>地点</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 地图列表（可选） -->
+                <div class="map-list" id="mapList" style="display: none;">
+                    <!-- 列表项将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <span>丨</span>
+                <a href="overview.html">数据概览</a>
+                <span>丨</span>
+                <a href="events.html">历史事件</a>
+                <span>丨</span>
+                <a href="map-interactive.html">地理地图</a>
+                <span>丨</span>
+                <a href="persons.html">人物名片</a>
+                <span>丨</span>
+                <a href="http://localhost:3000" target="_blank">实际系统</a>
+            </div>
+            <p class="footer-copyright">©2025 皖北军事环境成因知识图谱平台</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script src="page-scripts.js"></script>
+    <script src="data-loader.js"></script>
+    <script src="map-interactive.js"></script>
+</body>
+</html>

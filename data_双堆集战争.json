@@ -1,0 +1,1289 @@
+{
+  "dataset": "双堆集战争",
+  "summary": {
+    "total_nodes": 39,
+    "total_relationships": 70,
+    "events": 0,
+    "persons": 19,
+    "locations": 0,
+    "times": 0
+  },
+  "nodes": [
+    {
+      "id": "shuangduiji_293",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "刘伯承",
+        "纬度": 33.8,
+        "经度": 116.8,
+        "战役": "淮海战役",
+        "指挥位置": "中原野战军前线指挥部",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_295",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "陈毅",
+        "纬度": 33.9,
+        "经度": 117.0,
+        "战役": "淮海战役",
+        "指挥位置": "华东野战军前线指挥部",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_296",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "邓小平",
+        "纬度": 34.26,
+        "经度": 117.19,
+        "指挥位置": "徐州前线指挥部",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_297",
+      "labels": [
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 33.43,
+        "经度": 116.65,
+        "名称": "中原野战军",
+        "作战区域": "淮海战场中原侧",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_294",
+      "labels": [
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 33.91823862006739,
+        "经度": 115.26791009388137,
+        "名称": "中央军委",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_299",
+      "labels": [
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 34.0,
+        "经度": 117.2,
+        "名称": "华东野战军",
+        "作战区域": "淮海战场华东侧",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_298",
+      "labels": [
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 32.66397328171164,
+        "经度": 115.8425111350787,
+        "名称": "总前委",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_300",
+      "labels": [
+        "人物",
+        "国民党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "杜聿明",
+        "纬度": 34.28,
+        "经度": 115.82,
+        "战役": "淮海战役",
+        "指挥位置": "杜聿明集团司令部（陈官庄）",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_301",
+      "labels": [
+        "兵团",
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 34.28,
+        "经度": 115.82,
+        "名称": "杜聿明集团",
+        "作战区域": "陈官庄（被围）",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_302",
+      "labels": [
+        "人物",
+        "国民党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "蒋介石",
+        "纬度": 32.06,
+        "经度": 118.78,
+        "指挥位置": "南京总统府",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_325",
+      "labels": [
+        "人物",
+        "国民党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "黄百韬",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_305",
+      "labels": [
+        "人物",
+        "国民党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "黄维",
+        "纬度": 33.43,
+        "经度": 116.67,
+        "战役": "淮海战役",
+        "指挥位置": "第十二兵团司令部（双堆集）",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_304",
+      "labels": [
+        "人物",
+        "国民党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "邱清泉",
+        "纬度": 34.1,
+        "经度": 117.1,
+        "战役": "淮海战役",
+        "指挥位置": "邱清泉兵团（徐州以南）",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_303",
+      "labels": [
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 34.01170562197389,
+        "经度": 117.55601884393559,
+        "名称": "国民党",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_307",
+      "labels": [
+        "兵团",
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 34.1,
+        "经度": 117.1,
+        "名称": "邱清泉兵团",
+        "作战区域": "徐州以南（增援中）",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_339",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "陈士架",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_310",
+      "labels": [
+        "兵团",
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 33.43,
+        "经度": 116.67,
+        "名称": "黄维兵团",
+        "作战区域": "双堆集（被围）",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_312",
+      "labels": [
+        "军队",
+        "国民党军",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 33.43,
+        "经度": 116.67,
+        "名称": "第十二兵团",
+        "作战区域": "双堆集（被围）",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_309",
+      "labels": [
+        "人物",
+        "将领",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "廖运周",
+        "纬度": 33.44,
+        "经度": 116.66,
+        "指挥位置": "一一〇师驻地",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_308",
+      "labels": [
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "名称": "解放军",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_324",
+      "labels": [
+        "兵团",
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 34.35,
+        "经度": 117.77,
+        "名称": "黄百韬兵团",
+        "作战区域": "碾庄圩（被围）",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_327",
+      "labels": [
+        "人物",
+        "国民党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "李延年",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_323",
+      "labels": [
+        "兵团",
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 33.32,
+        "经度": 117.32,
+        "名称": "李延年兵团",
+        "作战区域": "固镇地区（被阻）",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_330",
+      "labels": [
+        "人物",
+        "国民党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "刘汝明",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_329",
+      "labels": [
+        "兵团",
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 33.3,
+        "经度": 117.3,
+        "名称": "刘汝明兵团",
+        "作战区域": "固镇地区（被阻）",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_331",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "杜义德",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_332",
+      "labels": [
+        "军队",
+        "淮海战役",
+        "解放军"
+      ],
+      "properties": {
+        "名称": "第七纵队",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_333",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "毛泽东",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_334",
+      "labels": [
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 33.40227185597732,
+        "经度": 115.2714675420471,
+        "名称": "中共中央",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_335",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "王近山",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_336",
+      "labels": [
+        "军队",
+        "淮海战役",
+        "解放军"
+      ],
+      "properties": {
+        "名称": "第六纵队",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_337",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "谢富治",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_338",
+      "labels": [
+        "军队",
+        "淮海战役",
+        "解放军"
+      ],
+      "properties": {
+        "名称": "第四纵队",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_340",
+      "labels": [
+        "军事组织",
+        "淮海战役"
+      ],
+      "properties": {
+        "纬度": 33.38,
+        "经度": 116.67,
+        "名称": "南集团",
+        "作战区域": "双堆集南侧（主攻集团）",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_341",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "陈赓",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_342",
+      "labels": [
+        "军队",
+        "淮海战役",
+        "解放军"
+      ],
+      "properties": {
+        "名称": "第九纵队",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_343",
+      "labels": [
+        "人物",
+        "共产党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "陈锡联",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_344",
+      "labels": [
+        "军队",
+        "淮海战役",
+        "解放军"
+      ],
+      "properties": {
+        "名称": "第一纵队",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    },
+    {
+      "id": "shuangduiji_345",
+      "labels": [
+        "人物",
+        "国民党指挥官",
+        "淮海战役"
+      ],
+      "properties": {
+        "姓名": "吴绍周",
+        "战役": "淮海战役",
+        "data_source": "双堆集.json",
+        "import_time": "2025-12-20T19:40:21.514669"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": "shuangduiji_295",
+      "target": "shuangduiji_293",
+      "type": "协同",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中野与华野协同作战"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_296",
+      "target": "shuangduiji_293",
+      "type": "实施_战略协同",
+      "properties": {
+        "描述": "中野政委与司令员战略协同",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_293",
+      "target": "shuangduiji_297",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_293",
+      "target": "shuangduiji_296",
+      "type": "实施_战略协同",
+      "properties": {
+        "描述": "中野政委与司令员战略协同",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_293",
+      "target": "shuangduiji_295",
+      "type": "协同",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中野与华野协同作战"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_293",
+      "target": "shuangduiji_294",
+      "type": "授权_临机处置",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_295",
+      "target": "shuangduiji_299",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_295",
+      "target": "shuangduiji_296",
+      "type": "协同",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中野与华野协同作战"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_295",
+      "target": "shuangduiji_293",
+      "type": "协同",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中野与华野协同作战"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_295",
+      "target": "shuangduiji_294",
+      "type": "授权_临机处置",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_296",
+      "target": "shuangduiji_295",
+      "type": "协同",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中野与华野协同作战"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_293",
+      "target": "shuangduiji_295",
+      "type": "协同",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中野与华野协同作战"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_295",
+      "target": "shuangduiji_296",
+      "type": "协同",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中野与华野协同作战"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_296",
+      "target": "shuangduiji_298",
+      "type": "担任书记",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_296",
+      "target": "shuangduiji_293",
+      "type": "实施_战略协同",
+      "properties": {
+        "描述": "中野政委与司令员战略协同",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_296",
+      "target": "shuangduiji_295",
+      "type": "协同",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中野与华野协同作战"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_296",
+      "target": "shuangduiji_298",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_296",
+      "target": "shuangduiji_294",
+      "type": "授权_临机处置",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_293",
+      "target": "shuangduiji_296",
+      "type": "实施_战略协同",
+      "properties": {
+        "描述": "中野政委与司令员战略协同",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_301",
+      "target": "shuangduiji_300",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_300",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥前线将领",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_300",
+      "target": "shuangduiji_302",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥前线将领",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_300",
+      "target": "shuangduiji_301",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_325",
+      "type": "指挥",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "最高统帅指挥兵团司令"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_305",
+      "target": "shuangduiji_302",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥兵团司令",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_304",
+      "target": "shuangduiji_302",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥前线将领",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_305",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥兵团司令",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_304",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥前线将领",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_300",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥前线将领",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_303",
+      "type": "统治",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_300",
+      "target": "shuangduiji_302",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥前线将领",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_307",
+      "target": "shuangduiji_304",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_304",
+      "target": "shuangduiji_307",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_304",
+      "target": "shuangduiji_302",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥前线将领",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_304",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥前线将领",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_305",
+      "target": "shuangduiji_339",
+      "type": "指挥",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "兵团司令指挥下属将领"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_310",
+      "target": "shuangduiji_305",
+      "type": "率领",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "兵团司令率领兵团"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_312",
+      "target": "shuangduiji_305",
+      "type": "率领",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "兵团司令率领兵团"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_305",
+      "target": "shuangduiji_312",
+      "type": "率领",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "兵团司令率领兵团"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_305",
+      "target": "shuangduiji_302",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥兵团司令",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_305",
+      "target": "shuangduiji_310",
+      "type": "率领",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "兵团司令率领兵团"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_305",
+      "target": "shuangduiji_309",
+      "type": "隶属于",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "师长隶属于兵团司令"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_305",
+      "target": "shuangduiji_308",
+      "type": "被俘",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_305",
+      "type": "指挥",
+      "properties": {
+        "描述": "最高统帅指挥兵团司令",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_325",
+      "target": "shuangduiji_324",
+      "type": "率领",
+      "properties": {
+        "描述": "兵团司令率领兵团",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_302",
+      "target": "shuangduiji_325",
+      "type": "指挥",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "最高统帅指挥兵团司令"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_325",
+      "target": "shuangduiji_324",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_324",
+      "target": "shuangduiji_325",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_327",
+      "target": "shuangduiji_323",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_323",
+      "target": "shuangduiji_327",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_330",
+      "target": "shuangduiji_329",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_329",
+      "target": "shuangduiji_330",
+      "type": "率领",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_332",
+      "target": "shuangduiji_331",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_331",
+      "target": "shuangduiji_332",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_334",
+      "target": "shuangduiji_333",
+      "type": "由_主席",
+      "properties": {
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_333",
+      "target": "shuangduiji_298",
+      "type": "授权_临机处置",
+      "properties": {
+        "描述": "授权总前委临机处置",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_333",
+      "target": "shuangduiji_294",
+      "type": "领导",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "中共中央主席领导中央军委"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_333",
+      "target": "shuangduiji_334",
+      "type": "领导",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_336",
+      "target": "shuangduiji_335",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_335",
+      "target": "shuangduiji_336",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_338",
+      "target": "shuangduiji_337",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_337",
+      "target": "shuangduiji_338",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_339",
+      "target": "shuangduiji_312",
+      "type": "隶属于",
+      "properties": {
+        "描述": "师长隶属于兵团",
+        "战役": "淮海战役"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_305",
+      "target": "shuangduiji_339",
+      "type": "指挥",
+      "properties": {
+        "战役": "淮海战役",
+        "描述": "兵团司令指挥下属将领"
+      },
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_339",
+      "target": "shuangduiji_340",
+      "type": "统一指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_342",
+      "target": "shuangduiji_341",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_341",
+      "target": "shuangduiji_342",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_344",
+      "target": "shuangduiji_343",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_343",
+      "target": "shuangduiji_344",
+      "type": "指挥",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    },
+    {
+      "source": "shuangduiji_345",
+      "target": "shuangduiji_308",
+      "type": "被俘",
+      "properties": {},
+      "data_source": "双堆集.json",
+      "import_time": "2025-12-20T19:40:21.514669"
+    }
+  ],
+  "data_source": "双堆集.json"
+}

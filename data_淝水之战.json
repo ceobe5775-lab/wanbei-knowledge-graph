@@ -1,0 +1,192 @@
+{
+  "dataset": "淝水之战",
+  "summary": {
+    "total_nodes": 6,
+    "total_relationships": 12,
+    "events": 6,
+    "persons": 0,
+    "locations": 0,
+    "times": 0
+  },
+  "nodes": [
+    {
+      "id": "feishui_1581",
+      "labels": [
+        "事件"
+      ],
+      "properties": {
+        "时间": "378年2月",
+        "敌兵力": 170000,
+        "名称": "围攻襄阳",
+        "描述": "前秦围攻襄阳，苻坚派遣诸将合围，朱序死守",
+        "data_source": "淝水.json",
+        "import_time": "2025-12-20T19:40:21.503681"
+      }
+    },
+    {
+      "id": "feishui_1582",
+      "labels": [
+        "事件"
+      ],
+      "properties": {
+        "时间": "379年2月",
+        "名称": "襄阳陷落",
+        "描述": "襄阳城破，朱序被俘归秦",
+        "data_source": "淝水.json",
+        "import_time": "2025-12-20T19:40:21.503681"
+      }
+    },
+    {
+      "id": "feishui_1583",
+      "labels": [
+        "事件"
+      ],
+      "properties": {
+        "时间": "383年8月",
+        "敌兵力": 1000000,
+        "名称": "大举南侵",
+        "描述": "苻坚从长安发兵，号称百万，水陆并进",
+        "data_source": "淝水.json",
+        "import_time": "2025-12-20T19:40:21.503681"
+      }
+    },
+    {
+      "id": "feishui_1584",
+      "labels": [
+        "事件"
+      ],
+      "properties": {
+        "时间": "383年10月",
+        "名称": "寿阳战役",
+        "描述": "苻融攻克寿阳，梁成屯兵洛涧阻击晋军",
+        "data_source": "淝水.json",
+        "import_time": "2025-12-20T19:40:21.503681"
+      }
+    },
+    {
+      "id": "feishui_1585",
+      "labels": [
+        "事件"
+      ],
+      "properties": {
+        "时间": "383年11月",
+        "名称": "洛涧之战",
+        "描述": "刘牢之夜袭洛涧，大破秦军，斩梁成",
+        "data_source": "淝水.json",
+        "import_time": "2025-12-20T19:40:21.503681"
+      }
+    },
+    {
+      "id": "feishui_1586",
+      "labels": [
+        "事件"
+      ],
+      "properties": {
+        "时间": "383年11月",
+        "名称": "淝水决战",
+        "描述": "淝水半渡击之，秦军大败，苻融阵亡",
+        "data_source": "淝水.json",
+        "import_time": "2025-12-20T19:40:21.503681"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": "feishui_1581",
+      "target": "feishui_1582",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1581",
+      "target": "feishui_1583",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1581",
+      "target": "feishui_1584",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1582",
+      "target": "feishui_1583",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1582",
+      "target": "feishui_1584",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1582",
+      "target": "feishui_1585",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1583",
+      "target": "feishui_1584",
+      "type": "触发",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1583",
+      "target": "feishui_1585",
+      "type": "触发",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1583",
+      "target": "feishui_1586",
+      "type": "触发",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1584",
+      "target": "feishui_1585",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1584",
+      "target": "feishui_1586",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    },
+    {
+      "source": "feishui_1585",
+      "target": "feishui_1586",
+      "type": "导致",
+      "properties": {},
+      "data_source": "淝水.json",
+      "import_time": "2025-12-20T19:40:21.503681"
+    }
+  ],
+  "data_source": "淝水.json"
+}
