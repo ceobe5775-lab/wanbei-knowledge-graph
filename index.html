@@ -4,35 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>皖北军事环境成因知识图谱平台 - 项目展示</title>
+    <meta name="description" content="基于Neo4j图数据库的皖北军事环境成因知识图谱可视化平台，提供历史事件、人物、地点的多维度可视化展示与交互分析">
+    <meta name="keywords" content="知识图谱,历史事件,皖北,军事环境,Neo4j,数据可视化">
+    <meta name="author" content="皖北军事环境成因知识图谱平台">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8080/">
+    <meta property="og:title" content="皖北军事环境成因知识图谱平台">
+    <meta property="og:description" content="基于Neo4j图数据库的皖北军事环境成因知识图谱可视化平台，提供历史事件、人物、地点的多维度可视化展示与交互分析">
+    <meta property="og:image" content="http://localhost:8080/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://localhost:8080/">
+    <meta property="twitter:title" content="皖北军事环境成因知识图谱平台">
+    <meta property="twitter:description" content="基于Neo4j图数据库的皖北军事环境成因知识图谱可视化平台">
+    <meta property="twitter:image" content="http://localhost:8080/images/og-image.jpg">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="data-loader.js" as="script">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#3E2723">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="page-styles.css">
+    <link rel="stylesheet" href="css/historical-theme.css">
+    <link rel="stylesheet" href="css/loading-indicator.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/empty-state.css">
+    <link rel="stylesheet" href="css/lazy-load.css">
+    <!-- Google Fonts with fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" onerror="this.onerror=null; this.remove();">
+    <!-- Fallback fonts if Google Fonts fails -->
+    <style>
+        @font-face {
+            font-family: 'Noto Serif SC Fallback';
+            src: local('SimSun'), local('宋体');
+        }
+        @font-face {
+            font-family: 'Noto Sans SC Fallback';
+            src: local('Microsoft YaHei'), local('微软雅黑');
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="主导航">
         <div class="container">
             <div class="nav-brand">
-                <span class="logo-icon">🗺️</span>
-                <span class="logo-text">知识图谱平台</span>
+                <span class="logo-icon" aria-hidden="true">🗺️</span>
+                <span class="logo-text">皖北军事环境成因<br>知识图谱平台</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">首页</a></li>
-                <li><a href="overview.html" class="nav-link">数据概览</a></li>
-                <li><a href="events.html" class="nav-link">历史事件</a></li>
-                <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
-                <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
-                <li><a href="persons.html" class="nav-link">人物名片</a></li>
-                <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
-                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link active" role="menuitem" aria-current="page">首页</a></li>
+                <li role="none"><a href="overview.html" class="nav-link" role="menuitem">数据概览</a></li>
+                <li role="none"><a href="events.html" class="nav-link" role="menuitem">历史事件</a></li>
+                <li role="none"><a href="map-interactive.html" class="nav-link" role="menuitem">地理地图</a></li>
+                <li role="none"><a href="map-canvas.html" class="nav-link" role="menuitem">事件分布</a></li>
+                <li role="none"><a href="persons.html" class="nav-link" role="menuitem">人物名片</a></li>
+                <li role="none"><a href="knowledgeGraph.html" class="nav-link" role="menuitem">知识图谱</a></li>
+                <li role="none"><a href="http://localhost:3000" target="_blank" class="nav-link" role="menuitem" aria-label="在新窗口打开实际系统">实际系统</a></li>
             </ul>
-            <div class="nav-toggle">
+            <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -48,9 +90,34 @@
                     <span class="title-line">知识图谱平台</span>
                 </h1>
                 <p class="hero-subtitle">基于 Neo4j 图数据库的历史事件可视化分析系统</p>
-                <div class="hero-buttons">
-                    <a href="overview.html" class="btn btn-primary">数据概览</a>
-                    <a href="knowledgeGraph.html" class="btn btn-secondary">知识图谱</a>
+                <div class="hero-buttons" role="group" aria-label="主要操作">
+                    <a href="overview.html" class="btn btn-primary" aria-label="查看数据概览">数据概览</a>
+                    <a href="knowledgeGraph.html" class="btn btn-secondary" aria-label="查看知识图谱">知识图谱</a>
+                </div>
+                <!-- 快速开始引导 -->
+                <div class="quick-start-guide">
+                    <h3>快速开始</h3>
+                    <div class="guide-steps">
+                        <div class="guide-step">
+                            <div class="step-number">1</div>
+                            <p>浏览数据概览，了解整体情况</p>
+                        </div>
+                        <div class="guide-step">
+                            <div class="step-number">2</div>
+                            <p>选择感兴趣的事件集深入探索</p>
+                        </div>
+                        <div class="guide-step">
+                            <div class="step-number">3</div>
+                            <p>在知识图谱中查看关联关系</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- 核心事件集入口 -->
+                <div class="core-event-sets">
+                    <h3>核心事件集</h3>
+                    <div class="event-set-cards" id="core-event-sets-container">
+                        <!-- 由 data-loader.js 动态填充 -->
+                    </div>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -753,8 +820,12 @@ G001, 34.8, 113.6, 花园口, E001</code></pre>
         </div>
     </footer>
 
+    <script src="js/utils/toast.js"></script>
+    <script src="js/utils/error-handler.js"></script>
+    <script src="js/utils/lazy-load.js"></script>
     <script src="script.js"></script>
     <script src="page-scripts.js"></script>
     <script src="stats-loader.js"></script>
+    <script src="data-loader.js"></script>
 </body>
 </html>
