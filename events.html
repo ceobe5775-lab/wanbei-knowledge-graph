@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>历史事件 - 皖北军事环境成因知识图谱平台</title>
+    <meta name="description" content="浏览皖北地区重要军事历史事件时间轴，了解历史事件的时间顺序和关联关系">
+    <meta name="keywords" content="历史事件,时间轴,皖北,军事历史">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8080/events.html">
+    <meta property="og:title" content="历史事件 - 皖北军事环境成因知识图谱平台">
+    <meta property="og:description" content="浏览皖北地区重要军事历史事件时间轴">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="历史事件 - 皖北军事环境成因知识图谱平台">
+    <meta property="twitter:description" content="浏览皖北地区重要军事历史事件时间轴">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="page-styles.css">
+    <link rel="stylesheet" href="css/loading-indicator.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" onerror="this.onerror=null; this.href='';">
+    <style>
+        @font-face {
+            font-family: 'Noto Serif SC Fallback';
+            src: local('SimSun'), local('宋体');
+        }
+        @font-face {
+            font-family: 'Noto Sans SC Fallback';
+            src: local('Microsoft YaHei'), local('微软雅黑');
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -16,7 +40,7 @@
         <div class="container">
             <div class="nav-brand">
                 <span class="logo-icon">🗺️</span>
-                <span class="logo-text">知识图谱平台</span>
+                <span class="logo-text">皖北军事环境成因<br>知识图谱平台</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">首页</a></li>
@@ -38,7 +62,7 @@
 
     <!-- 页面内容 -->
     <div class="page-container">
-        <div class="page-header">
+        <div class="page-header page-header-events">
             <div class="container">
                 <h1 class="page-title">历史事件</h1>
                 <p class="page-subtitle">皖北地区重要军事历史事件时间轴</p>
@@ -47,73 +71,9 @@
 
         <div class="page-content">
             <div class="container">
-                <!-- 时间轴 -->
-                <div class="timeline-section">
-                    <div class="timeline-item">
-                        <div class="timeline-year">1938年6月</div>
-                        <div class="timeline-content">
-                            <h3>花园口决堤</h3>
-                            <p>1938年6月9日，为阻止日军西进，国民党军队在郑州花园口炸开黄河大堤，造成黄河改道，形成大片黄泛区。这一事件对皖北地区产生了深远影响，改变了当地的地理环境和军事格局。洪水淹没了大量农田和村庄，造成数十万民众流离失所，同时也形成了天然的军事屏障。</p>
-                            <div class="timeline-tags">
-                                <span class="tag">军事事件</span>
-                                <span class="tag">地理变迁</span>
-                                <span class="tag">皖北地区</span>
-                            </div>
-                            <a href="eventDetail.html?id=1" class="timeline-link">查看详情 →</a>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">1940年</div>
-                        <div class="timeline-content">
-                            <h3>皖北地区军事活动</h3>
-                            <p>1940年，皖北地区成为抗日战争的重要战场。多支抗日武装力量在此活动，与日伪军展开激烈战斗。这一时期的军事活动对当地的社会结构和人口分布产生了重大影响。新四军、八路军等抗日力量在皖北地区建立了多个根据地，开展游击战争。</p>
-                            <div class="timeline-tags">
-                                <span class="tag">抗日战争</span>
-                                <span class="tag">军事活动</span>
-                            </div>
-                            <a href="eventDetail.html?id=2" class="timeline-link">查看详情 →</a>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">1945年</div>
-                        <div class="timeline-content">
-                            <h3>抗日战争胜利</h3>
-                            <p>1945年8月，抗日战争胜利结束。皖北地区经历了长期的战争洗礼，地理环境、人口结构、社会关系都发生了深刻变化。这些变化为后续的军事环境形成奠定了基础。战后重建工作开始，但军事格局的影响依然深远。</p>
-                            <div class="timeline-tags">
-                                <span class="tag">历史转折</span>
-                                <span class="tag">社会变迁</span>
-                            </div>
-                            <a href="eventDetail.html?id=3" class="timeline-link">查看详情 →</a>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">1946-1949年</div>
-                        <div class="timeline-content">
-                            <h3>解放战争时期</h3>
-                            <p>解放战争期间，皖北地区再次成为重要战场。淮海战役等重大战役在此展开，大量军事行动和人员流动进一步塑造了当地的军事环境特征。这一时期的事件对皖北地区的最终军事环境形成起到了决定性作用。</p>
-                            <div class="timeline-tags">
-                                <span class="tag">解放战争</span>
-                                <span class="tag">重大战役</span>
-                            </div>
-                            <a href="eventDetail.html?id=4" class="timeline-link">查看详情 →</a>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-year">1948年11月</div>
-                        <div class="timeline-content">
-                            <h3>淮海战役</h3>
-                            <p>1948年11月至1949年1月，淮海战役在皖北及周边地区展开。这是解放战争中规模最大、影响最深远的战役之一。战役涉及多个重要城市和战略要地，对皖北地区的军事环境产生了重大影响。</p>
-                            <div class="timeline-tags">
-                                <span class="tag">重大战役</span>
-                                <span class="tag">战略要地</span>
-                            </div>
-                            <a href="eventDetail.html?id=5" class="timeline-link">查看详情 →</a>
-                        </div>
-                    </div>
+                <!-- 时间轴（由 data-loader.js 动态填充） -->
+                <div class="timeline-section timeline-container">
+                    <!-- 动态内容 -->
                 </div>
 
                 <div class="load-more">

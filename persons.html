@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>人物名片 - 皖北军事环境成因知识图谱平台</title>
+    <meta name="description" content="查看皖北地区重要历史人物信息，包括军事指挥官、政治人物等历史人物的详细信息">
+    <meta name="keywords" content="历史人物,人物名片,军事指挥官,政治人物">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8080/persons.html">
+    <meta property="og:title" content="人物名片 - 皖北军事环境成因知识图谱平台">
+    <meta property="og:description" content="查看皖北地区重要历史人物信息">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="人物名片 - 皖北军事环境成因知识图谱平台">
+    <meta property="twitter:description" content="查看皖北地区重要历史人物信息">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="page-styles.css">
+    <link rel="stylesheet" href="css/loading-indicator.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" onerror="this.onerror=null; this.href='';">
+    <style>
+        @font-face {
+            font-family: 'Noto Serif SC Fallback';
+            src: local('SimSun'), local('宋体');
+        }
+        @font-face {
+            font-family: 'Noto Sans SC Fallback';
+            src: local('Microsoft YaHei'), local('微软雅黑');
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -16,7 +40,7 @@
         <div class="container">
             <div class="nav-brand">
                 <span class="logo-icon">🗺️</span>
-                <span class="logo-text">知识图谱平台</span>
+                <span class="logo-text">皖北军事环境成因<br>知识图谱平台</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">首页</a></li>
@@ -38,7 +62,7 @@
 
     <!-- 页面内容 -->
     <div class="page-container">
-        <div class="page-header">
+        <div class="page-header page-header-persons">
             <div class="container">
                 <h1 class="page-title">人物名片</h1>
                 <p class="page-subtitle">皖北地区重要历史人物信息</p>
@@ -64,64 +88,8 @@
                     </div>
                 </div>
 
-                <!-- 人物卡片列表 -->
-                <div class="person-cards">
-                    <div class="person-card">
-                        <div class="person-avatar">蒋</div>
-                        <div class="person-info">
-                            <h3>蒋介石</h3>
-                            <p class="person-role">军事指挥官</p>
-                            <p class="person-desc">国民党军事领导人，在花园口决堤等事件中发挥重要作用。</p>
-                            <div class="person-tags">
-                                <span class="tag">军事指挥官</span>
-                                <span class="tag">政治人物</span>
-                            </div>
-                        </div>
-                        <a href="personDetail.html?id=1" class="person-link">查看详情 →</a>
-                    </div>
-
-                    <div class="person-card">
-                        <div class="person-avatar">陈</div>
-                        <div class="person-info">
-                            <h3>陈毅</h3>
-                            <p class="person-role">军事指挥官</p>
-                            <p class="person-desc">新四军领导人，在皖北地区开展抗日活动。</p>
-                            <div class="person-tags">
-                                <span class="tag">军事指挥官</span>
-                                <span class="tag">新四军</span>
-                            </div>
-                        </div>
-                        <a href="personDetail.html?id=2" class="person-link">查看详情 →</a>
-                    </div>
-
-                    <div class="person-card">
-                        <div class="person-avatar">刘</div>
-                        <div class="person-info">
-                            <h3>刘伯承</h3>
-                            <p class="person-role">军事指挥官</p>
-                            <p class="person-desc">解放军高级将领，参与淮海战役等重要军事行动。</p>
-                            <div class="person-tags">
-                                <span class="tag">军事指挥官</span>
-                                <span class="tag">解放军</span>
-                            </div>
-                        </div>
-                        <a href="personDetail.html?id=3" class="person-link">查看详情 →</a>
-                    </div>
-
-                    <div class="person-card">
-                        <div class="person-avatar">邓</div>
-                        <div class="person-info">
-                            <h3>邓小平</h3>
-                            <p class="person-role">政治人物</p>
-                            <p class="person-desc">政治领导人，在解放战争时期参与皖北地区军事行动。</p>
-                            <div class="person-tags">
-                                <span class="tag">政治人物</span>
-                                <span class="tag">军事行动</span>
-                            </div>
-                        </div>
-                        <a href="personDetail.html?id=4" class="person-link">查看详情 →</a>
-                    </div>
-                </div>
+                <!-- 人物卡片列表（由 data-loader.js 动态填充） -->
+                <div class="person-cards"></div>
 
                 <div class="load-more">
                     <button class="btn-more">加载更多人物</button>

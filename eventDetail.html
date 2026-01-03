@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件详情 - 皖北军事环境成因知识图谱平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <style>
+        .event-detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .event-header {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .event-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .event-time {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .event-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .detail-section {
+            margin-bottom: 2rem;
+        }
+        .detail-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+        .detail-item {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        .detail-label {
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .detail-value {
+            color: #1f2937;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 1px solid #667eea;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .back-link:hover {
+            background: #667eea;
+            color: white;
+        }
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: #6b7280;
+        }
+        .error {
+            text-align: center;
+            padding: 4rem;
+            color: #ef4444;
+        }
+        .coordinate-info {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: #e0e7ff;
+            color: #3730a3;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🗺️</span>
+                <span class="logo-text">皖北军事环境成因<br>知识图谱平台</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="overview.html" class="nav-link">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
+                <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
+                <li><a href="persons.html" class="nav-link">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <div class="page-content">
+            <div class="event-detail-container">
+                <a href="javascript:history.back()" class="back-link">← 返回</a>
+                
+                <div id="loading" class="loading">加载中...</div>
+                <div id="error" class="error" style="display: none;">数据加载失败，请稍后重试。</div>
+                
+                <div id="eventContent" style="display: none;">
+                    <div class="event-header">
+                        <h1 class="event-name" id="eventName">事件名称</h1>
+                        <div class="event-time" id="eventTime">时间信息</div>
+                    </div>
+                    
+                    <div class="event-content">
+                        <div class="detail-section">
+                            <h3>基本信息</h3>
+                            <div class="detail-item">
+                                <div class="detail-label">事件ID</div>
+                                <div class="detail-value" id="eventId">-</div>
+                            </div>
+                            <div class="detail-item" id="eventDescriptionItem" style="display: none;">
+                                <div class="detail-label">描述</div>
+                                <div class="detail-value" id="eventDescription">-</div>
+                            </div>
+                            <div class="detail-item" id="eventLocationItem" style="display: none;">
+                                <div class="detail-label">地点</div>
+                                <div class="detail-value" id="eventLocation">-</div>
+                            </div>
+                            <div class="detail-item" id="eventRegionItem" style="display: none;">
+                                <div class="detail-label">地区</div>
+                                <div class="detail-value" id="eventRegion">-</div>
+                            </div>
+                            <div class="detail-item" id="eventCoordinateItem" style="display: none;">
+                                <div class="detail-label">坐标</div>
+                                <div class="detail-value">
+                                    <span class="coordinate-info" id="eventCoordinate">-</span>
+                                </div>
+                            </div>
+                            <div class="detail-item" id="eventDataSourceItem" style="display: none;">
+                                <div class="detail-label">数据来源</div>
+                                <div class="detail-value" id="eventDataSource">-</div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section" id="eventPropertiesSection" style="display: none;">
+                            <h3>其他属性</h3>
+                            <div id="eventProperties"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <span>丨</span>
+                <a href="overview.html">数据概览</a>
+                <span>丨</span>
+                <a href="events.html">历史事件</a>
+                <span>丨</span>
+                <a href="map-interactive.html">地理地图</a>
+                <span>丨</span>
+                <a href="persons.html">人物名片</a>
+            </div>
+            <p class="footer-copyright">©2025 皖北军事环境成因知识图谱平台</p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=20250103"></script>
+    <script src="page-scripts.js?v=20250103"></script>
+    <script>
+        (function() {
+            // 从URL获取事件ID
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('id');
+            
+            if (!eventId) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = '缺少事件ID参数';
+                return;
+            }
+            
+            // 加载事件详情
+            async function loadEventDetail() {
+                try {
+                    console.log('开始加载事件详情，ID:', eventId);
+                    const response = await fetch('data.json');
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP错误: ${response.status} ${response.statusText}`);
+                    }
+                    
+                    const data = await response.json();
+                    console.log('数据加载成功，数据结构:', {
+                        hasCombined: !!data.combined,
+                        hasEvents: !!(data.combined && data.combined.events),
+                        eventsCount: data.combined?.events?.length || 0
+                    });
+                    
+                    if (!data || !data.combined || !data.combined.events) {
+                        throw new Error('数据格式错误：缺少 combined.events');
+                    }
+                    
+                    // 查找事件（支持多种ID匹配方式）
+                    const event = data.combined.events.find(e => {
+                        const eId = e.id;
+                        const pId = e.properties?.id;
+                        // 字符串匹配
+                        return String(eId) === String(eventId) || 
+                               String(pId) === String(eventId) ||
+                               eId === eventId || 
+                               pId === eventId;
+                    });
+                    
+                    console.log('查找结果:', {
+                        found: !!event,
+                        searchedId: eventId,
+                        sampleIds: data.combined.events.slice(0, 3).map(e => e.id)
+                    });
+                    
+                    if (!event) {
+                        throw new Error(`未找到ID为 ${eventId} 的事件`);
+                    }
+                    
+                    // 显示事件信息
+                    displayEvent(event);
+                    
+                } catch (error) {
+                    console.error('加载事件详情失败:', error);
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').textContent = error.message || '数据加载失败，请稍后重试。';
+                }
+            }
+            
+            function displayEvent(event) {
+            const props = event.properties || {};
+            
+            // 基本信息
+            document.getElementById('eventName').textContent = props.名称 || props.事件名称 || props.name || '未知事件';
+            document.getElementById('eventId').textContent = event.id || props.id || '-';
+            
+            // 时间
+            const time = props.时间 || props.发生时间 || props.time || '';
+            if (time) {
+                document.getElementById('eventTime').textContent = time;
+            } else {
+                document.getElementById('eventTime').textContent = '时间未知';
+            }
+            
+            // 描述
+            const description = props.描述 || props.description || '';
+            if (description) {
+                document.getElementById('eventDescription').textContent = description;
+                document.getElementById('eventDescriptionItem').style.display = 'block';
+            }
+            
+            // 地点
+            const location = props.地点 || props.location || '';
+            if (location) {
+                document.getElementById('eventLocation').textContent = location;
+                document.getElementById('eventLocationItem').style.display = 'block';
+            }
+            
+            // 地区
+            const region = props.地区 || props.region || '';
+            if (region) {
+                document.getElementById('eventRegion').textContent = region;
+                document.getElementById('eventRegionItem').style.display = 'block';
+            }
+            
+            // 坐标
+            const lat = props.lat || props.纬度 || '';
+            const lng = props.lng || props.经度 || '';
+            if (lat && lng) {
+                document.getElementById('eventCoordinate').textContent = `${lat}, ${lng}`;
+                document.getElementById('eventCoordinateItem').style.display = 'block';
+            }
+            
+            // 数据来源
+            const dataSource = props.数据来源 || props.data_source || '';
+            if (dataSource) {
+                document.getElementById('eventDataSource').textContent = dataSource;
+                document.getElementById('eventDataSourceItem').style.display = 'block';
+            }
+            
+            // 其他属性（排除已显示的属性）
+            const excludedKeys = ['名称', '事件名称', 'name', 'id', '时间', '发生时间', 'time', 
+                                 '描述', 'description', '地点', 'location', '地区', 'region',
+                                 'lat', '纬度', 'lng', '经度', '数据来源', 'data_source'];
+            const otherProps = Object.keys(props).filter(key => 
+                !excludedKeys.includes(key) && props[key] !== null && props[key] !== ''
+            );
+            
+            if (otherProps.length > 0) {
+                const propertiesHtml = otherProps.map(key => `
+                    <div class="detail-item">
+                        <div class="detail-label">${key}</div>
+                        <div class="detail-value">${props[key]}</div>
+                    </div>
+                `).join('');
+                document.getElementById('eventProperties').innerHTML = propertiesHtml;
+                document.getElementById('eventPropertiesSection').style.display = 'block';
+            }
+            
+            // 隐藏加载提示，显示内容
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('eventContent').style.display = 'block';
+        }
+        
+        // 执行加载
+        loadEventDetail();
+    })();
+    </script>
+</body>
+</html>
+
+

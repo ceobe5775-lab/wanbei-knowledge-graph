@@ -5,21 +5,228 @@
 }
 
 .page-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    /* 默认背景（用于向后兼容） */
+    background: 
+        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+    color: var(--text-on-dark);
     padding: 3rem 0;
     margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 数据概览页面 - 统计图表/数据表格主题 */
+.page-header-overview {
+    background: 
+        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 历史事件页面 - 时间轴/历史文档主题 */
+.page-header-events {
+    background: 
+        url('https://images.unsplash.com/photo-1509021436665-8f1d3145574d?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 地理地图页面 - 地图/地理主题 */
+.page-header-map {
+    background: 
+        url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 事件分布页面 - 热力图/分布图主题 */
+.page-header-distribution {
+    background: 
+        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 人物名片页面 - 人物肖像/历史人物主题 */
+.page-header-persons {
+    background: 
+        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 知识图谱页面 - 网络图/关联关系主题 */
+.page-header-knowledge {
+    background: 
+        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&q=80&auto=format&fit=crop') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 古籍边缘效果 + 色调统一遮罩 */
+    background: 
+        radial-gradient(ellipse at top, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+        radial-gradient(ellipse at bottom, rgba(139, 69, 19, 0.15) 0%, transparent 40%),
+        /* 色调统一遮罩 - 确保图片色调与主题一致（棕色/古铜色） */
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.25) 0%, 
+            rgba(93, 64, 55, 0.2) 50%,
+            rgba(62, 39, 35, 0.25) 100%);
+    opacity: 0.75;
+    z-index: 0;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 文字可读性遮罩 */
+    background: linear-gradient(
+        to bottom,
+        rgba(62, 39, 35, 0.3) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(62, 39, 35, 0.3) 100%
+    );
+    z-index: 0;
 }
 
 .page-title {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    font-family: 'Noto Serif SC', serif;
+    color: var(--text-on-dark);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .page-subtitle {
     font-size: 1.2rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    font-family: 'Noto Sans SC', sans-serif;
+    color: var(--text-on-dark);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .page-content {
@@ -42,28 +249,44 @@
     background: var(--bg-white);
     border-radius: 12px;
     padding: 2rem;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-paper);
+    border: 1px solid var(--border-color);
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-red));
+    border-radius: 12px 12px 0 0;
 }
 
 .stat-box:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--border-dark);
 }
 
 .stat-label {
     font-size: 1rem;
     color: var(--text-secondary);
     margin-bottom: 1rem;
+    font-family: 'Noto Sans SC', sans-serif;
 }
 
 .stat-value {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     line-height: 1;
     margin-bottom: 0.5rem;
+    font-family: 'Noto Serif SC', serif;
 }
 
 .stat-unit {
@@ -82,14 +305,33 @@
     background: var(--bg-white);
     border-radius: 12px;
     padding: 2rem;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-paper);
+    border: 1px solid var(--border-color);
     text-align: center;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.category-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .category-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: var(--border-dark);
+}
+
+.category-card:hover::after {
+    transform: scaleX(1);
 }
 
 .category-icon {
@@ -170,11 +412,11 @@
 .timeline-section::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 1rem;
     top: 0;
     bottom: 0;
-    width: 3px;
-    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    width: 2px;
+    background: var(--accent-blue);
 }
 
 .timeline-item {
@@ -186,40 +428,57 @@
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -1.5rem;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    background: var(--primary-color);
+    left: -2.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-gold);
     border-radius: 50%;
-    border: 4px solid var(--bg-white);
-    box-shadow: 0 0 0 2px var(--primary-color);
+    border: 2px solid var(--primary-dark);
+    box-shadow: 0 0 0 3px var(--bg-paper);
 }
 
 .timeline-year {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-dark);
     margin-bottom: 0.5rem;
+    font-family: 'Noto Serif SC', serif;
 }
 
 .timeline-content {
     background: var(--bg-white);
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-paper);
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent-gold), var(--accent-red));
+    border-radius: 12px 0 0 12px;
 }
 
 .timeline-content:hover {
     box-shadow: var(--shadow-lg);
     transform: translateX(5px);
+    border-color: var(--border-dark);
 }
 
 .timeline-content h3 {
     font-size: 1.5rem;
     color: var(--text-primary);
     margin-bottom: 1rem;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 600;
 }
 
 .timeline-content p {
@@ -229,14 +488,19 @@
 }
 
 .timeline-link {
-    color: var(--primary-color);
+    color: var(--primary-dark);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s ease;
+    font-family: 'Noto Sans SC', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .timeline-link:hover {
-    color: var(--primary-dark);
+    color: var(--accent-red);
+    gap: 0.75rem;
 }
 
 .load-more {
@@ -606,21 +870,70 @@
 }
 
 .graph-container {
-    background: var(--bg-white);
-    border-radius: 12px;
+    background: #ffffff; /* Neo4j Browser 实际背景色（rect fill="none"，背景为白色） */
+    border-radius: 0; /* Neo4j Browser无圆角 */
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+    box-shadow: none; /* Neo4j Browser无阴影 */
     margin-bottom: 2rem;
     min-height: 600px;
+    border: none; /* Neo4j Browser无边框 */
+    position: relative;
 }
 
 .graph-placeholder {
     width: 100%;
     height: 600px;
-    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+    background: #f5f5f5; /* Neo4j Browser风格背景 */
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+/* Cytoscape容器样式（完全匹配Neo4j Browser） */
+#cy {
+    width: 100%;
+    height: 100%;
+    background: #ffffff; /* Neo4j Browser 实际背景色（rect fill="none"，背景为白色） */
+    cursor: grab;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* 性能优化 */
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+#cy:active {
+    cursor: grabbing;
+}
+
+/* Neo4j Browser精确canvas样式 */
+#cy canvas {
+    image-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Neo4j Browser节点样式覆盖（通过CSS变量精确控制） */
+#cy .cy-node {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 改进图例颜色以匹配新样式 */
+.event-color {
+    background: #ff6b6b;
+}
+
+.person-color {
+    background: #4ecdc4;
+}
+
+.location-color {
+    background: #95e1d3;
+}
+
+.time-color {
+    background: #a8e6cf;
 }
 
 .graph-content {

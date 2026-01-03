@@ -4,23 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数据概览 - 皖北军事环境成因知识图谱平台</title>
+    <meta name="description" content="查看皖北军事环境成因知识图谱平台的数据统计概览，包括历史事件、人物、地点等节点的详细统计信息">
+    <meta name="keywords" content="数据概览,统计信息,历史数据,知识图谱">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8080/overview.html">
+    <meta property="og:title" content="数据概览 - 皖北军事环境成因知识图谱平台">
+    <meta property="og:description" content="查看皖北军事环境成因知识图谱平台的数据统计概览">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="数据概览 - 皖北军事环境成因知识图谱平台">
+    <meta property="twitter:description" content="查看皖北军事环境成因知识图谱平台的数据统计概览">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="page-styles.css">
+    <link rel="stylesheet" href="css/historical-theme.css">
+    <link rel="stylesheet" href="css/loading-indicator.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/empty-state.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" onerror="this.onerror=null; this.remove();">
+    <!-- Fallback fonts if Google Fonts fails -->
+    <style>
+        @font-face {
+            font-family: 'Noto Serif SC Fallback';
+            src: local('SimSun'), local('宋体');
+        }
+        @font-face {
+            font-family: 'Noto Sans SC Fallback';
+            src: local('Microsoft YaHei'), local('微软雅黑');
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="主导航">
         <div class="container">
             <div class="nav-brand">
-                <span class="logo-icon">🗺️</span>
-                <span class="logo-text">知识图谱平台</span>
+                <span class="logo-icon" aria-hidden="true">🗺️</span>
+                <span class="logo-text">皖北军事环境成因<br>知识图谱平台</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">首页</a></li>
-                <li><a href="overview.html" class="nav-link active">数据概览</a></li>
+            <ul class="nav-menu" role="menubar" id="nav-menu">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">首页</a></li>
+                <li role="none"><a href="overview.html" class="nav-link active" role="menuitem" aria-current="page">数据概览</a></li>
                 <li><a href="events.html" class="nav-link">历史事件</a></li>
                 <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
                 <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
@@ -28,17 +57,17 @@
                 <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
                 <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
             </ul>
-            <div class="nav-toggle">
+            <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
     <!-- 页面内容 -->
     <div class="page-container">
-        <div class="page-header">
+        <div class="page-header page-header-overview">
             <div class="container">
                 <h1 class="page-title">数据概览</h1>
                 <p class="page-subtitle">皖北军事环境成因知识图谱平台数据统计</p>
@@ -47,43 +76,60 @@
 
         <div class="page-content">
             <div class="container">
+                <!-- 导出功能 -->
+                <div class="data-filters">
+                    <h3>数据导出</h3>
+                    <div class="export-actions" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                        <button id="export-csv" class="btn-export" aria-label="导出为CSV">导出CSV</button>
+                        <button id="export-json" class="btn-export" aria-label="导出为JSON">导出JSON</button>
+                    </div>
+                </div>
+
                 <!-- 统计数据 -->
                 <div class="stats-section">
                     <div class="stats-row">
-                        <div class="stat-box">
+                        <div class="stat-box stat-card-historical">
                             <div class="stat-label">历史事件节点</div>
-                            <div class="stat-value" data-target="0" data-type="events">0</div>
+                        <div class="stat-value" data-target="0" data-type="events">0</div>
                             <div class="stat-unit">项</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-label">历史人物节点</div>
-                            <div class="stat-value" data-target="0" data-type="persons">0</div>
+                        <div class="stat-value" data-target="0" data-type="persons">0</div>
                             <div class="stat-unit">位</div>
                         </div>
                     </div>
                     <div class="stats-row">
                         <div class="stat-box">
                             <div class="stat-label">地理地点节点</div>
-                            <div class="stat-value" data-target="0" data-type="locations">0</div>
+                        <div class="stat-value" data-target="0" data-type="locations">0</div>
                             <div class="stat-unit">个</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-label">时间节点</div>
-                            <div class="stat-value" data-target="0" data-type="times">0</div>
+                        <div class="stat-value" data-target="0" data-type="times">0</div>
                             <div class="stat-unit">个</div>
                         </div>
                     </div>
                     <div class="stats-row">
                         <div class="stat-box">
                             <div class="stat-label">关系连接</div>
-                            <div class="stat-value" data-target="0" data-type="relationships">0</div>
+                        <div class="stat-value" data-target="0" data-type="relationships">0</div>
                             <div class="stat-unit">条</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-label">总节点数</div>
-                            <div class="stat-value" data-target="0" data-type="total_nodes">0</div>
+                        <div class="stat-value" data-target="0" data-type="total_nodes">0</div>
                             <div class="stat-unit">个</div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- 事件集概览 -->
+                <div class="event-sets-section" style="margin-bottom: 3rem;">
+                    <h2 class="section-title" style="margin-bottom: 2rem;">核心事件集</h2>
+                    <div class="event-sets-overview" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <!-- 由 data-loader.js 动态填充 -->
                     </div>
                 </div>
 
@@ -156,7 +202,55 @@
 
     <script src="script.js"></script>
     <script src="page-scripts.js"></script>
-    <script src="stats-loader.js"></script>
+    <!-- stats-loader.js已被data-loader.js取代，注释掉避免冲突 -->
+    <!-- <script src="stats-loader.js"></script> -->
+    <script src="js/utils/toast.js"></script>
+    <script src="js/utils/error-handler.js"></script>
+    <script src="js/utils/export.js"></script>
     <script src="data-loader.js"></script>
+    <script src="data-loader-global.js"></script>
+    <script>
+        // 绑定导出按钮
+        document.addEventListener('DOMContentLoaded', () => {
+            const exportCsvBtn = document.getElementById('export-csv');
+            const exportJsonBtn = document.getElementById('export-json');
+            
+            if (exportCsvBtn) {
+                exportCsvBtn.addEventListener('click', () => {
+                    // 等待数据加载完成
+                    setTimeout(() => {
+                        if (typeof window.allData !== 'undefined' && window.allData) {
+                            const events = window.normalizedData?.events || window.allData.combined?.events || [];
+                            if (events.length > 0) {
+                                window.exportToCSV(events, 'events-export.csv');
+                            } else {
+                                if (typeof window.toast !== 'undefined') {
+                                    window.toast.warning('没有事件数据可导出', 3000);
+                                }
+                            }
+                        } else {
+                            if (typeof window.toast !== 'undefined') {
+                                window.toast.warning('数据尚未加载，请稍候再试', 3000);
+                            }
+                        }
+                    }, 500);
+                });
+            }
+            
+            if (exportJsonBtn) {
+                exportJsonBtn.addEventListener('click', () => {
+                    setTimeout(() => {
+                        if (typeof window.allData !== 'undefined' && window.allData) {
+                            window.exportToJSON(window.allData, 'data-export.json');
+                        } else {
+                            if (typeof window.toast !== 'undefined') {
+                                window.toast.warning('数据尚未加载，请稍候再试', 3000);
+                            }
+                        }
+                    }, 500);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
