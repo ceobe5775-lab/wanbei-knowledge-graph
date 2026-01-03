@@ -1,0 +1,141 @@
+/* 知识图谱页面专用样式 - 2025-01-XX 保存的快照 */
+
+/* mapSelected 样式（已移除，保留作为参考） */
+.mapSelected {
+    width: 100%;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.mapSelected .map {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    height: 100%;
+}
+
+.mapSelected .map > select {
+    width: 100%;
+}
+
+/* 返回按钮样式 */
+.back-btn-img {
+    width: 50px;
+    height: 48px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    vertical-align: middle;
+}
+
+.back-btn-img:hover {
+    opacity: 0.8;
+}
+
+/* 筛选下拉框样式（已移除，保留作为参考） */
+.filter-select-item,
+.filter-select-type {
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.filter-select-item:hover,
+.filter-select-type:hover {
+    border-color: #2563eb;
+}
+
+.filter-select-item:focus,
+.filter-select-type:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+/* canvas-legend 样式 - 图例位于canvas左下角 */
+.canvas-legend {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 280px;
+    z-index: 1000;
+}
+
+.canvas-legend .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.canvas-legend .legend-item:last-child {
+    margin-bottom: 0;
+}
+
+.canvas-legend .legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;  /* 圆形 */
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* 搜索区域样式 */
+.search-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 图谱容器样式 */
+.graph-container {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
