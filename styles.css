@@ -6,25 +6,63 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --primary-dark: #1e40af;
-    --secondary-color: #10b981;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --bg-light: #f9fafb;
-    --bg-white: #ffffff;
-    --border-color: #e5e7eb;
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    /* 历史风格色彩方案 - 博物馆展板风格 */
+    /* 主色调 - 深棕色系（历史厚重感） */
+    --primary-color: #5D4037;
+    --primary-dark: #3E2723;
+    --primary-light: #8D6E63;
+    
+    /* 强调色 */
+    --accent-red: #8B4513;      /* 深红色 - 重要事件标记 */
+    --accent-gold: #D4AF37;     /* 金色 - 重要人物/地点 */
+    --accent-blue: #2C3E50;     /* 深蓝色 - 时间线/数据统计 */
+    
+    /* 背景色 - 米白色（历史文献纸张） */
+    --bg-paper: #FAF9F6;        /* 纸张色 */
+    --bg-paper-light: #F5F5F0;  /* 浅纸张色 */
+    --bg-white: #FFFFFF;
+    --bg-light: #F9F9F7;
+    
+    /* 文本颜色 */
+    --text-primary: #3E2723;    /* 深棕色文字 */
+    --text-secondary: #6C757D;  /* 灰色辅助文字 */
+    --text-muted: #ADB5BD;      /* 更浅的灰色 */
+    --text-on-dark: #FAF9F6;    /* 深色背景上的文字 */
+    
+    /* 边框和分隔 */
+    --border-color: #D7CCC8;    /* 浅棕色边框 */
+    --border-dark: #8D6E63;     /* 深棕色边框 */
+    --divider-color: #E0E0E0;   /* 分隔线 */
+    
+    /* 阴影（更subtle，符合历史风格） */
+    --shadow-sm: 0 1px 3px 0 rgba(62, 39, 35, 0.08);
+    --shadow-md: 0 4px 6px -1px rgba(62, 39, 35, 0.12);
+    --shadow-lg: 0 10px 15px -3px rgba(62, 39, 35, 0.15);
+    --shadow-xl: 0 20px 25px -5px rgba(62, 39, 35, 0.18);
+    --shadow-paper: 0 2px 8px rgba(62, 39, 35, 0.1); /* 纸张阴影 */
 }
 
 body {
-    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Noto Serif SC', 'Noto Serif SC Fallback', 'SimSun', '宋体', 'Microsoft YaHei', '微软雅黑', -apple-system, BlinkMacSystemFont, 'Segoe UI', serif;
     color: var(--text-primary);
-    line-height: 1.6;
+    line-height: 1.7;
     overflow-x: hidden;
+    background: var(--bg-paper); /* 历史文献纸张背景 */
+}
+
+/* 所有页面统一纸张背景 */
+html, body, .page-container {
+    background: var(--bg-paper) !important;
+}
+
+/* Hero区域使用深棕色背景 */
+.hero,
+.hero-background {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%) !important;
+}
+
+.hero-overlay {
+    background: rgba(62, 39, 35, 0.1) !important;
 }
 
 .container {
@@ -39,9 +77,10 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(250, 249, 246, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-paper);
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     transition: all 0.3s ease;
 }
@@ -57,9 +96,62 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary-dark);
+    font-family: 'Noto Serif SC', 'Noto Serif SC Fallback', 'SimSun', '宋体', serif;
+    line-height: 1.4;
+}
+
+.logo-img {
+    height: 35px;
+    width: auto;
+    display: block;
+    max-width: 50px;
+}
+
+.logo-title {
+    height: auto;
+    width: auto;
+    display: block;
+    max-height: 20px;
+    max-width: 300px;
+    object-fit: contain;
+}
+
+.logo-text {
+    display: inline-block;
+    line-height: 1.3;
+}
+
+/* 移动端logo调整 */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 32px;
+    }
+    
+    .logo-title {
+        height: 28px;
+    }
+    
+    .logo-text {
+        font-size: 0.9rem;
+    }
+    
+    .logo-text br {
+        display: none;
+    }
+    
+    .logo-text::after {
+        content: '知识图谱平台';
+    }
+    
+    .logo-text::before {
+        content: '皖北军事环境成因';
+        display: block;
+        font-size: 0.75rem;
+        opacity: 0.8;
+    }
 }
 
 .logo-icon {
@@ -70,6 +162,40 @@ body {
     display: flex;
     list-style: none;
     gap: 2rem;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+/* 桌面端菜单展开时的样式（当菜单换行时需要） */
+@media (min-width: 769px) {
+    .navbar .container {
+        position: relative;
+    }
+    
+    .nav-menu.active {
+        display: flex !important;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(250, 249, 246, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--border-color);
+        z-index: 999;
+        gap: 1rem;
+        margin-top: 1px;
+    }
+    
+    .nav-menu.active .nav-link {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-menu.active .nav-link:last-child {
+        border-bottom: none;
+    }
 }
 
 .nav-link {
@@ -82,7 +208,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-color);
+    color: var(--primary-dark);
 }
 
 .nav-link.active::after {
@@ -92,7 +218,7 @@ body {
     left: 0;
     right: 0;
     height: 2px;
-    background: var(--primary-color);
+    background: var(--accent-gold);
 }
 
 .nav-toggle {
@@ -100,6 +226,12 @@ body {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.nav-toggle[style*="display: flex"] {
+    opacity: 1;
 }
 
 .nav-toggle span {
@@ -127,7 +259,35 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 历史风格背景：深棕色渐变 + 纹理 */
+    background: 
+        /* 主渐变 */
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.95) 0%, 
+            rgba(93, 64, 55, 0.9) 50%,
+            rgba(62, 39, 35, 0.95) 100%),
+        /* 纹理层 - 模拟古籍纸张 */
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.03) 2px, 
+            rgba(139, 69, 19, 0.03) 4px),
+        repeating-linear-gradient(90deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.03) 2px, 
+            rgba(139, 69, 19, 0.03) 4px),
+        /* 历史地图风格的点状纹理 */
+        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(44, 62, 80, 0.1) 0%, transparent 50%);
+    background-size: 
+        100% 100%,
+        100% 100%,
+        100% 100%,
+        40% 40%,
+        40% 40%,
+        60% 60%;
     z-index: -2;
 }
 
@@ -138,8 +298,27 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>');
+    /* 历史地图网格纹理 */
+    background-image: 
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
     opacity: 0.3;
+    z-index: -1;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 模拟古籍边缘磨损效果 */
+    background: 
+        radial-gradient(ellipse at top left, rgba(62, 39, 35, 0.3) 0%, transparent 30%),
+        radial-gradient(ellipse at bottom right, rgba(62, 39, 35, 0.3) 0%, transparent 30%);
+    z-index: -1;
 }
 
 .hero-overlay {
@@ -148,7 +327,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(
+        to bottom,
+        rgba(62, 39, 35, 0.4) 0%,
+        rgba(62, 39, 35, 0.2) 50%,
+        rgba(62, 39, 35, 0.4) 100%
+    );
     z-index: -1;
 }
 
@@ -163,6 +347,8 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
+    font-family: 'Noto Serif SC', 'Noto Serif SC Fallback', 'SimSun', '宋体', serif;
+    color: var(--text-on-dark);
 }
 
 .title-line {
@@ -181,6 +367,8 @@ body {
     margin-bottom: 2rem;
     opacity: 0.9;
     animation: fadeInUp 0.8s ease 0.4s both;
+    font-family: 'Noto Sans SC', 'Noto Sans SC Fallback', 'Microsoft YaHei', '微软雅黑', sans-serif;
+    color: var(--text-on-dark);
 }
 
 .hero-buttons {
@@ -201,24 +389,29 @@ body {
 }
 
 .btn-primary {
-    background: white;
-    color: var(--primary-color);
+    background: var(--accent-gold);
+    color: var(--primary-dark);
+    border: none;
+    font-family: 'Noto Serif SC', 'Noto Serif SC Fallback', 'SimSun', '宋体', serif;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    background: #E6C84F;
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: var(--text-on-dark);
+    border: 2px solid var(--text-on-dark);
+    font-family: 'Noto Serif SC', 'Noto Serif SC Fallback', 'SimSun', '宋体', serif;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: var(--primary-color);
+    background: rgba(250, 249, 246, 0.2);
+    color: var(--text-on-dark);
+    border-color: var(--accent-gold);
 }
 
 .hero-stats {
@@ -287,6 +480,19 @@ section {
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    font-family: 'Noto Serif SC', 'Noto Serif SC Fallback', 'SimSun', '宋体', serif;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title.title-decoration::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
 }
 
 .section-subtitle {
@@ -294,6 +500,8 @@ section {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+    font-family: 'Noto Sans SC', 'Noto Sans SC Fallback', 'Microsoft YaHei', '微软雅黑', sans-serif;
+    line-height: 1.7;
 }
 
 /* 介绍区域 */
@@ -304,21 +512,44 @@ section {
 .intro-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2rem; /* 32px - 大间距 */
+    margin-bottom: 3rem; /* 48px */
 }
 
 .intro-card {
     background: var(--bg-white);
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-paper);
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     text-align: center;
+    position: relative;
+    /* 纸张纹理背景 */
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(62, 39, 35, 0.03) 2px, rgba(62, 39, 35, 0.03) 4px);
+}
+
+.intro-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .intro-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-dark);
+}
+
+.intro-card:hover::before {
+    opacity: 1;
 }
 
 .card-icon {
@@ -330,11 +561,14 @@ section {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    font-family: 'Noto Serif SC', 'Noto Serif SC Fallback', 'SimSun', '宋体', serif;
+    font-weight: 600;
 }
 
 .intro-card p {
     color: var(--text-secondary);
     line-height: 1.8;
+    font-family: 'Noto Sans SC', 'Noto Sans SC Fallback', 'Microsoft YaHei', '微软雅黑', sans-serif;
 }
 
 /* 功能特色 */
@@ -345,7 +579,8 @@ section {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+    gap: 2rem; /* 32px */
+    padding: 3rem 0; /* 48px上下 */
 }
 
 .feature-card {
@@ -1048,6 +1283,38 @@ section {
     margin-top: 2rem;
 }
 
+/* 事件集分组样式 */
+.timeline-group-header {
+    margin: 3rem 0 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-group-header:first-child {
+    margin-top: 0;
+}
+
+.event-set-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+}
+
+.event-count {
+    font-size: 1rem;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
 .btn-more {
     padding: 0.75rem 2rem;
     background: var(--primary-color);
@@ -1057,6 +1324,13 @@ section {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.btn-more {
+    text-decoration: none;
+    color: white;
 }
 
 .btn-more:hover {
@@ -1240,6 +1514,10 @@ section {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -1250,6 +1528,8 @@ section {
         padding: 2rem;
         box-shadow: var(--shadow-lg);
         transition: left 0.3s ease;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -1260,31 +1540,43 @@ section {
         display: flex;
     }
 
+    .hero {
+        min-height: 80vh;
+        padding: 2rem 0;
+    }
+
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .hero-stats {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
+        margin-top: 2rem;
     }
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .btn {
         width: 100%;
         max-width: 300px;
+        padding: 0.875rem 1.5rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
     }
 
     .step-card {
@@ -1294,5 +1586,88 @@ section {
 
     .step-number {
         margin: 0 auto;
+    }
+
+    .quick-start-guide {
+        margin-top: 2rem;
+        padding: 1.5rem;
+    }
+
+    .guide-steps {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .core-event-sets {
+        margin-top: 2rem;
+    }
+
+    .event-set-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .intro-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .page-header {
+        padding: 2rem 0;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-group select {
+        width: 100%;
+    }
+
+    #apply-filters,
+    #reset-filters {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .stats-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .stat-box {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .nav-brand {
+        font-size: 0.95rem;
     }
 }

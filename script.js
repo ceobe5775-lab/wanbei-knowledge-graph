@@ -33,12 +33,198 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
+// 使用 ResizeObserver 实时监听容器大小变化
+let resizeObserver = null;
+
+// 检测导航菜单是否换行（两行）
+function checkNavMenuWrap() {
+    if (!navMenu || !navToggle) return;
+    
+    const navContainer = navMenu.closest('.container');
+    if (!navContainer) return;
+    
+    const navBrand = navContainer.querySelector('.nav-brand');
+    if (!navBrand) return;
+    
+    // 判断是否为移动端
+    const isMobile = window.innerWidth < 768;
+    
+    // 如果是移动端，使用移动端逻辑
+    if (isMobile) {
+        navToggle.style.display = 'flex';
+        if (!navMenu.classList.contains('active')) {
+            navMenu.style.left = '-100%';
+        }
+        return;
+    }
+    
+    // 桌面端：先快速隐藏菜单并显示切换按钮，避免闪烁
+    const wasActive = navMenu.classList.contains('active');
+    
+    // 先快速隐藏菜单，避免看到换行（使用 opacity 和 visibility 实现平滑过渡）
+    const originalOpacity = navMenu.style.opacity;
+    const originalVisibility = navMenu.style.visibility;
+    navMenu.style.opacity = '0';
+    navMenu.style.visibility = 'hidden';
+    navMenu.style.transition = 'opacity 0.1s ease, visibility 0.1s ease';
+    navMenu.style.position = '';
+    navMenu.style.left = '';
+    
+    // 显示切换按钮（使用 requestAnimationFrame 确保同步）
+    requestAnimationFrame(() => {
+        navToggle.style.display = 'flex';
+        navToggle.style.opacity = '1';
+        navToggle.style.transition = 'opacity 0.2s ease';
+        // 强制浏览器渲染切换按钮
+        void navToggle.offsetWidth;
+        
+        // 立即在下一帧进行测量
+        requestAnimationFrame(() => {
+            // 恢复菜单显示进行测量（但保持隐藏）
+            navMenu.style.display = 'flex';
+            navMenu.style.opacity = '0';
+            navMenu.style.visibility = 'hidden';
+            
+            // 强制重新计算布局
+            void navMenu.offsetWidth;
+            
+            // 获取导航栏容器的可用宽度（现在切换按钮已经显示）
+            const containerWidth = navContainer.offsetWidth;
+            const brandWidth = navBrand.offsetWidth;
+            const brandMargin = parseInt(window.getComputedStyle(navBrand).marginRight) || 0;
+            const toggleWidth = navToggle.offsetWidth || 25;
+            const availableWidth = containerWidth - brandWidth - brandMargin - toggleWidth - 30; // 30px 额外边距
+            
+            // 检查菜单是否超出可用宽度
+            const menuWidth = navMenu.scrollWidth;
+            const menuHeight = navMenu.offsetHeight;
+            const firstLink = navMenu.querySelector('.nav-link');
+            const firstLinkHeight = firstLink ? parseInt(window.getComputedStyle(firstLink).lineHeight) || firstLink.offsetHeight : 0;
+            
+            // 判断是否换行：菜单高度超过单行高度，或菜单宽度超出可用空间
+            const hasWrapped = menuWidth > availableWidth || (firstLinkHeight > 0 && menuHeight > firstLinkHeight * 1.5);
+            
+            // 根据检测结果设置菜单状态
+            if (hasWrapped) {
+                // 换行：隐藏菜单，显示切换按钮
+                navToggle.style.display = 'flex';
+                navToggle.style.opacity = '1';
+                navMenu.style.display = 'none';
+                navMenu.style.opacity = '';
+                navMenu.style.visibility = '';
+                navMenu.style.transition = '';
+                if (!wasActive) {
+                    navMenu.classList.remove('active');
+                }
+            } else {
+                // 不换行：显示菜单，隐藏切换按钮
+                navToggle.style.display = 'none';
+                navToggle.style.opacity = '0';
+                navMenu.style.display = 'flex';
+                navMenu.style.opacity = '1';
+                navMenu.style.visibility = 'visible';
+                navMenu.style.transition = 'opacity 0.2s ease, visibility 0.2s ease';
+                navMenu.style.position = '';
+                navMenu.style.left = '';
+                navMenu.classList.remove('active');
+            }
+        });
     });
 }
+
+// 初始化时检查
+function initNavToggle() {
+    if (navToggle && navMenu) {
+        const navContainer = navMenu.closest('.container');
+        
+        // 页面加载完成后立即检查（多次检查确保准确）
+        function doCheck() {
+            checkNavMenuWrap();
+        }
+        
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                // 立即检查一次
+                doCheck();
+                // 延迟再检查一次，确保布局已稳定
+                setTimeout(doCheck, 50);
+                setTimeout(doCheck, 200);
+            });
+        } else {
+            doCheck();
+            setTimeout(doCheck, 50);
+            setTimeout(doCheck, 200);
+        }
+        
+        // 使用 ResizeObserver 实时监听容器大小变化
+        if (navContainer && window.ResizeObserver) {
+            resizeObserver = new ResizeObserver(() => {
+                // 使用 requestAnimationFrame 确保在下一帧检查
+                requestAnimationFrame(() => {
+                    checkNavMenuWrap();
+                });
+            });
+            resizeObserver.observe(navContainer);
+        }
+        
+        // 窗口大小改变时重新检查（作为 ResizeObserver 的备用方案）
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                requestAnimationFrame(checkNavMenuWrap);
+            }, 50);
+        });
+        
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+            
+            // 判断是否为移动端
+            const isMobile = window.innerWidth < 768;
+            
+            // 切换菜单显示/隐藏
+            if (isMobile) {
+                // 移动端使用 left 定位
+                navMenu.style.display = '';
+                if (isActive) {
+                    navMenu.style.left = '0';
+                } else {
+                    navMenu.style.left = '-100%';
+                }
+            } else {
+                // 桌面端使用 display 和 position 切换
+                if (isActive) {
+                    navMenu.style.display = 'flex';
+                    navMenu.style.position = 'absolute';
+                } else {
+                    navMenu.style.display = 'none';
+                    navMenu.style.position = '';
+                }
+            }
+            
+            // 更新ARIA属性
+            navToggle.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+        
+        // 点击页面其他地方时关闭桌面端菜单
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth >= 768 && navMenu && navToggle) {
+                if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navMenu.style.display = 'none';
+                    navMenu.style.position = '';
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    }
+}
+
+// 执行初始化
+initNavToggle();
 
 // 点击菜单项后关闭移动端菜单
 document.querySelectorAll('.nav-link').forEach(link => {
