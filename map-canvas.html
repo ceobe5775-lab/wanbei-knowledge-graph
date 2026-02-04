@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件分布 - 皖北军事环境成因知识图谱平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <style>
+        /* 移除page-container的padding，让内容全屏 */
+        .page-container {
+            min-height: calc(100vh - 200px);
+            padding-top: 80px;
+            width: 100%;
+        }
+        
+        /* page-header 样式 - 使用统一的 page-styles.css 样式 */
+        /* 移除本地覆盖，使用全局样式 */
+        
+        /* page-content 样式 */
+        .page-content {
+            padding: 2rem 0;
+            width: 100%;
+        }
+        
+        .page-content .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 地图包装器 - 参考参考网站 */
+        .map-wrapper {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            background: #f0f8ff;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* 地图区域标题 */
+        .map-section-title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            z-index: 100;
+        }
+        
+        /* 筛选栏 - 参考参考网站的样式 */
+        .map-filter-bar {
+            background: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 100;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        /* 筛选状态显示 */
+        .filter-status {
+            flex: 1;
+            padding: 8px 15px;
+            background: #f3f4f6;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #374151;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .filter-status-label {
+            font-weight: 500;
+            color: #6b7280;
+            margin-right: 8px;
+        }
+        
+        .filter-status-content {
+            color: #1f2937;
+        }
+        
+        /* 重置筛选按钮 */
+        .reset-filter-btn {
+            padding: 8px 20px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .reset-filter-btn:hover {
+            background: #dc2626;
+        }
+        
+        /* 筛选下拉框 */
+        .map-filter-bar select {
+            padding: 8px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background: white;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            min-width: 180px;
+            transition: all 0.3s;
+        }
+        
+        .map-filter-bar select:hover {
+            border-color: #2563eb;
+        }
+        
+        .map-filter-bar select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* 地图容器 */
+        .map-canvas-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #ffffff;
+        }
+        
+        #eventMapCanvas {
+            width: 100%;
+            height: 100%;
+            cursor: move;
+            display: block;
+        }
+        
+        /* 图例样式 - 参考参考网站 */
+        .canvas-legend {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 280px;
+            z-index: 1000;
+            min-width: 200px;
+        }
+        
+        .canvas-legend h4 {
+            margin: 0 0 15px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .legend-description {
+            font-size: 11px;
+            color: #6b7280;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 13px;
+            color: #374151;
+        }
+        
+        .legend-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        /* 城市瓦片视图 */
+        .city-tiles-view {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .city-tile {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .city-tile:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            border-color: var(--tile-color, #2563eb);
+        }
+        
+        .city-tile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .city-tile-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f2937;
+            margin: 0;
+        }
+        
+        .city-tile-count {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--tile-color, #2563eb);
+        }
+        
+        .city-tile-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .city-tile-color-indicator {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            margin-right: 8px;
+        }
+        
+        .city-tile-label {
+            font-size: 14px;
+            color: #6b7280;
+        }
+        
+        .city-tile-footer {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            font-size: 13px;
+            color: #6b7280;
+        }
+        
+        /* 返回按钮 */
+        .back-to-tiles-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #374151;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .back-to-tiles-btn:hover {
+            background: #f9fafb;
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+        
+        .current-city-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0;
+        }
+        
+        .view-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px 20px;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .mapSelected {
+            width: 100%;
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .mapSelected .map {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Align items to the start */
+            height: 100%;
+            padding: 0 20px;
+        }
+        
+        .mapSelected .map > select {
+            margin-right: 15px; /* Fixed spacing between selects */
+        }
+        
+        /* 返回按钮 - 固定在右侧 */
+        .back-btn-img {
+            width: 50px;
+            height: 48px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            margin-left: auto;
+            flex-shrink: 0;
+            display: block;
+            visibility: visible; /* 默认显示，在六市视图和详细视图都显示 */
+        }
+        
+        .back-btn-img:hover {
+            opacity: 0.8;
+        }
+        
+        /* 筛选下拉框样式 */
+        .filter-select-item,
+        .filter-select-type {
+            padding: 10px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+            font-size: 14px;
+            color: #333;
+            cursor: pointer;
+            min-width: 180px;
+            transition: all 0.3s;
+        }
+        
+        .filter-select-item:hover,
+        .filter-select-type:hover {
+            border-color: #2563eb;
+        }
+        
+        .filter-select-item:focus,
+        .filter-select-type:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+        }
+        
+        .event-tooltip {
+            position: absolute;
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            pointer-events: none;
+            z-index: 2000;
+            display: none;
+            max-width: 250px;
+            font-size: 13px;
+        }
+        
+        /* 事件列表面板 */
+        .events-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 350px;
+            max-height: calc(100% - 40px);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            z-index: 2001;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .events-panel.active {
+            display: flex;
+        }
+        
+        .events-panel-header {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(62, 39, 35, 0.95) 0%, rgba(93, 64, 55, 0.9) 100%);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .events-panel-header h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .events-panel-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s;
+            line-height: 1;
+        }
+        
+        .events-panel-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .events-panel-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            max-height: calc(600px - 80px);
+        }
+        
+        .events-panel-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .events-panel-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .events-panel-body::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        
+        .events-panel-body::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        .event-list-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: #f9fafb;
+            border-left: 3px solid rgba(93, 64, 55, 0.8);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+        
+        .event-list-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37, #8B4513);
+            border-radius: 6px 6px 0 0;
+        }
+        
+        .event-list-item:hover {
+            background: #f3f4f6;
+            border-left-color: rgba(62, 39, 35, 0.95);
+            transform: translateX(4px);
+        }
+        
+        .event-list-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .event-list-count {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .event-list-more {
+            margin-top: 12px;
+            padding: 10px;
+            text-align: center;
+            color: rgba(93, 64, 55, 0.9);
+            font-size: 14px;
+            background: rgba(62, 39, 35, 0.05);
+            border-radius: 6px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="导航栏/LOGO@目录用.svg" alt="LOGO" class="logo-img">
+                <img src="导航栏/皖北军事环境成因知识图谱.png" alt="皖北军事环境成因知识图谱" class="logo-title">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="overview.html" class="nav-link">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
+                <li><a href="map-canvas.html" class="nav-link active">事件分布</a></li>
+                <li><a href="persons.html" class="nav-link">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 页面容器 -->
+    <div class="page-container">
+        <!-- 页面头部 -->
+        <div class="page-header page-header-distribution">
+            <div class="container">
+                <h1 class="page-title">事件分布</h1>
+                <p class="page-subtitle">皖北地区历史事件地理分布可视化</p>
+            </div>
+        </div>
+
+        <!-- 页面内容 -->
+        <div class="page-content">
+            <div class="container">
+                <!-- 筛选栏 -->
+                <div class="mapSelected">
+                    <div class="map">
+                        <select id="eventTypeFilter" class="filter-select-item">
+                            <option value="">选择事件类型</option>
+                            <option value="全部事件">全部事件</option>
+                            <option value="军事事件">军事事件</option>
+                            <option value="社会事件">社会事件</option>
+                            <option value="地理变迁">地理变迁</option>
+                        </select>
+                        <select id="regionFilter" class="filter-select-type">
+                            <option value="">选择地区</option>
+                            <option value="全部地区">全部地区</option>
+                            <option value="阜阳市">阜阳市</option>
+                            <option value="亳州市">亳州市</option>
+                            <option value="淮北市">淮北市</option>
+                            <option value="宿州市">宿州市</option>
+                            <option value="蚌埠市">蚌埠市</option>
+                            <option value="淮南市">淮南市</option>
+                        </select>
+                        <img src="https://feiyi.inhct.cn/h5/h5images/icon_positonBack.png" id="back" alt="返回" class="back-btn-img">
+                    </div>
+                </div>
+
+                <!-- 地图包装器 -->
+                <div class="map-wrapper">
+                    <!-- Canvas地图容器 -->
+                    <div id="mapDetailView" class="map-canvas-container">
+                        <canvas id="eventMapCanvas"></canvas>
+                        
+                        <!-- 图例 -->
+                        <div class="canvas-legend">
+                            <div class="legend-item" data-range="100+">
+                                <div class="legend-color" style="background: #FFD700;"></div>
+                                <span>100件以上</span>
+                            </div>
+                            <div class="legend-item" data-range="75-100">
+                                <div class="legend-color" style="background: #FFA500;"></div>
+                                <span>75-100件</span>
+                            </div>
+                            <div class="legend-item" data-range="50-75">
+                                <div class="legend-color" style="background: #FF6347;"></div>
+                                <span>50-75件</span>
+                            </div>
+                            <div class="legend-item" data-range="25-50">
+                                <div class="legend-color" style="background: #9370DB;"></div>
+                                <span>25-50件</span>
+                            </div>
+                            <div class="legend-item" data-range="0-25">
+                                <div class="legend-color" style="background: #87CEEB;"></div>
+                                <span>25件以下</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 提示框 -->
+                        <div class="event-tooltip" id="eventTooltip"></div>
+                        
+                        <!-- 事件列表面板 -->
+                        <div class="events-panel" id="eventsPanel">
+                            <div class="events-panel-header">
+                                <h3 id="eventsPanelTitle">事件列表</h3>
+                                <button class="events-panel-close" id="eventsPanelClose">&times;</button>
+                            </div>
+                            <div class="events-panel-body" id="eventsPanelBody">
+                                <!-- 事件列表将在这里动态插入 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <span>丨</span>
+                <a href="overview.html">数据概览</a>
+                <span>丨</span>
+                <a href="events.html">历史事件</a>
+                <span>丨</span>
+                <a href="map-interactive.html">地理地图</a>
+                <span>丨</span>
+                <a href="persons.html">人物名片</a>
+                <span>丨</span>
+                <a href="http://localhost:3000" target="_blank">实际系统</a>
+            </div>
+            <p class="footer-copyright">©2025 皖北军事环境成因知识图谱平台</p>
+        </div>
+    </footer>
+
+    <!-- 引入ECharts -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="script.js?v=20250103"></script>
+    <script src="page-scripts.js?v=20250103"></script>
+    <script src="stats-loader.js?v=20250103"></script>
+    <!-- 地图模块 - 按依赖顺序加载 -->
+    <script src="js/map-modules/config.js"></script>
+    <script src="js/map-modules/state.js"></script>
+    <script src="js/map-modules/utils.js"></script>
+    <script src="js/map-modules/coords.js"></script>
+    <script src="js/map-modules/canvas-init.js"></script>
+    <script src="js/map-modules/stats.js"></script>
+    <script src="js/map-modules/view-adjust.js"></script>
+    <script src="js/map-modules/data-loader.js"></script>
+    <script src="js/map-modules/drawing.js"></script>
+    <script src="js/map-modules/interaction.js"></script>
+    <script src="js/map-modules/ui-update.js"></script>
+    <script src="js/map-modules/view-switch.js"></script>
+    <script src="js/map-modules/map-main.js"></script>
+</body>
+</html>
+
+
+

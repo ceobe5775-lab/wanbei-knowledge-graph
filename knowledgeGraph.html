@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识图谱 - 皖北军事环境成因知识图谱平台</title>
+    <meta name="description" content="交互式知识图谱可视化，探索历史事件、人物、地点之间的关联关系，支持节点筛选和关系探索">
+    <meta name="keywords" content="知识图谱,可视化,关联关系,节点探索">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost:8080/knowledgeGraph.html">
+    <meta property="og:title" content="知识图谱 - 皖北军事环境成因知识图谱平台">
+    <meta property="og:description" content="交互式知识图谱可视化，探索历史事件、人物、地点之间的关联关系">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="知识图谱 - 皖北军事环境成因知识图谱平台">
+    <meta property="twitter:description" content="交互式知识图谱可视化，探索历史事件、人物、地点之间的关联关系">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="stylesheet" href="css/knowledge-graph-styles.css">
+    <link rel="stylesheet" href="css/loading-indicator.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" onerror="this.onerror=null; this.href='';">
+    <style>
+        @font-face {
+            font-family: 'Noto Serif SC Fallback';
+            src: local('SimSun'), local('宋体');
+        }
+        @font-face {
+            font-family: 'Noto Sans SC Fallback';
+            src: local('Microsoft YaHei'), local('微软雅黑');
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="导航栏/LOGO@目录用.svg" alt="LOGO" class="logo-img">
+                <img src="导航栏/皖北军事环境成因知识图谱.png" alt="皖北军事环境成因知识图谱" class="logo-title">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="overview.html" class="nav-link">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
+                <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
+                <li><a href="persons.html" class="nav-link">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link active">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 页面内容 -->
+    <div class="page-container">
+        <div class="page-header page-header-knowledge">
+            <div class="container">
+                <h1 class="page-title">知识图谱</h1>
+                <p class="page-subtitle">皖北军事环境成因知识图谱可视化</p>
+            </div>
+        </div>
+
+        <div class="page-content">
+            <div class="container">
+                <!-- 搜索和控制 -->
+                <div class="graph-controls">
+                    <div class="search-section">
+                        <input type="text" placeholder="请输入事件/人物/地点搜索..." class="graph-search">
+                        <button class="search-btn">搜索</button>
+                        <img src="https://feiyi.inhct.cn/h5/h5images/icon_positonBack.png" id="back" alt="返回" class="back-btn-img" style="margin-left: 10px;">
+                    </div>
+                    <div class="graph-options">
+                        <label style="display: inline-flex; align-items: center; gap: 8px; margin-right: 12px;">
+                            <span style="font-size: 13px; color: #374151;">事件集快速定位</span>
+                            <select id="kg-eventset-select" style="padding: 6px 10px; border-radius: 6px; border: 1px solid #d1d5db; background: #fff; color: #111827;">
+                                <option value="">（请选择）</option>
+                            </select>
+                        </label>
+                        <button id="kg-extend-toggle" class="search-btn" style="padding: 6px 16px;">
+                            展开延展关系
+                        </button>
+                        <span>
+                            （打开后，点击事件节点将尽量显示其相关人物、地点及更多关系）
+                        </span>
+                    </div>
+                </div>
+
+                <!-- 图谱展示区域 -->
+                <div class="graph-container" style="position: relative;">
+                    <div id="cy" class="graph-placeholder" style="height:600px; width:100%;"></div>
+                    
+                    <!-- 图例（canvas-legend 样式）- 绝对定位在左下角 -->
+                    <div class="canvas-legend" style="position: absolute; bottom: 30px; left: 30px; background: rgba(255, 255, 255, 0.95); padding: 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); max-width: 280px; z-index: 1000;">
+                        <div class="legend-item" style="display: flex; align-items: center; margin-bottom: 10px; font-size: 13px; color: #374151;">
+                            <div class="legend-color" style="width: 20px; height: 20px; border-radius: 50%; margin-right: 10px; flex-shrink: 0; background: #ef4444;"></div>
+                            <span>事件节点</span>
+                        </div>
+                        <div class="legend-item" style="display: flex; align-items: center; margin-bottom: 10px; font-size: 13px; color: #374151;">
+                            <div class="legend-color" style="width: 20px; height: 20px; border-radius: 50%; margin-right: 10px; flex-shrink: 0; background: #f59e0b;"></div>
+                            <span>人物节点</span>
+                        </div>
+                        <div class="legend-item" style="display: flex; align-items: center; margin-bottom: 10px; font-size: 13px; color: #374151;">
+                            <div class="legend-color" style="width: 20px; height: 20px; border-radius: 50%; margin-right: 10px; flex-shrink: 0; background: #10b981;"></div>
+                            <span>地点节点</span>
+                        </div>
+                        <div class="legend-item" style="display: flex; align-items: center; margin-bottom: 0; font-size: 13px; color: #374151;">
+                            <div class="legend-color" style="width: 20px; height: 20px; border-radius: 50%; margin-right: 10px; flex-shrink: 0; background: #3b82f6;"></div>
+                            <span>时间节点</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <span>丨</span>
+                <a href="overview.html">数据概览</a>
+                <span>丨</span>
+                <a href="events.html">历史事件</a>
+                <span>丨</span>
+                <a href="map.html">地理地图</a>
+                <span>丨</span>
+                <a href="persons.html">人物名片</a>
+            </div>
+            <p class="footer-copyright">©2025 皖北军事环境成因知识图谱平台</p>
+        </div>
+    </footer>
+
+    <!-- 使用 vis.js (vis-network) 以完全匹配 Neo4j Browser 的渲染效果 -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network@latest/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- 知识图谱模块化代码（按依赖顺序加载） -->
+    <script src="js/kg-config.js"></script>
+    <script src="js/kg-utils.js"></script>
+    <script src="js/kg-cache.js"></script>
+    <script src="js/kg-renderer-vis.js"></script>
+    <script src="js/kg-renderer.js"></script>
+    <script src="js/kg-views.js"></script>
+    <!-- 线索延展功能 -->
+    <script src="js/kg-trail-extend.js"></script>
+    <script src="js/kg-trail-integration.js"></script>
+    <!-- 线索延展调试工具 -->
+    <script src="js/kg-trail-debug.js"></script>
+    
+    <!-- 主脚本 -->
+    <script src="script.js"></script>
+    <script src="page-scripts.js"></script>
+    <script src="data-loader.js"></script>
+    <script>
+        // 返回按钮功能 + 延展关系开关
+        document.addEventListener('DOMContentLoaded', function() {
+            const backBtn = document.getElementById('back');
+            if (backBtn) {
+                backBtn.addEventListener('click', function() {
+                    if (window.KGViews) {
+                        window.KGViews.init(); // 重置视图栈
+                        window.KGViews.showInitialView(); // 显示初始视图
+                    }
+                });
+            }
+
+            // 事件集下拉框：用于快速聚焦，避免全量数据导致“看起来很乱”
+            const eventSetSelect = document.getElementById('kg-eventset-select');
+            const fillEventSetSelect = () => {
+                try {
+                    if (!eventSetSelect) return;
+                    if (!window.KGCache || !window.KGCache.cache) return;
+                    const cache = window.KGCache.cache;
+                    if (!cache.allNodes || cache.allNodes.length === 0) return;
+
+                    const eventSets = cache.allNodes
+                        .filter(n => n && n.data && n.data.type === 'event' && n.data.isEventSet === true)
+                        .map(n => ({ id: n.data.id, label: n.data.label || n.data.id }))
+                        .sort((a, b) => String(a.label).localeCompare(String(b.label), 'zh-CN'));
+
+                    eventSetSelect.querySelectorAll('option:not(:first-child)').forEach(opt => opt.remove());
+                    eventSets.forEach(es => {
+                        const opt = document.createElement('option');
+                        opt.value = es.id;
+                        opt.textContent = es.label;
+                        eventSetSelect.appendChild(opt);
+                    });
+
+                    console.log('事件集下拉框已填充:', { count: eventSets.length });
+                } catch (e) {
+                    console.warn('填充事件集下拉框失败:', e);
+                }
+            };
+
+            if (eventSetSelect) {
+                eventSetSelect.addEventListener('change', function() {
+                    const eventSetId = String(this.value || '').trim();
+                    if (!eventSetId) return;
+                    if (window.KGViews && typeof window.KGViews.showEventSetView === 'function') {
+                        window.KGViews.showEventSetView(eventSetId);
+                        if (window.KGViews.updateFocusHint) window.KGViews.updateFocusHint();
+                    } else {
+                        console.warn('KGViews 未就绪，无法切换事件集视图');
+                    }
+                });
+            }
+            
+            // 事件类型和地区筛选功能（可以后续实现）
+            const eventTypeFilter = document.getElementById('eventTypeFilter');
+            const regionFilter = document.getElementById('regionFilter');
+            
+            if (eventTypeFilter) {
+                eventTypeFilter.addEventListener('change', function() {
+                    console.log('事件类型筛选:', this.value);
+                    // 可以在这里实现筛选逻辑
+                });
+            }
+            
+            if (regionFilter) {
+                regionFilter.addEventListener('change', function() {
+                    console.log('地区筛选:', this.value);
+                    // 可以在这里实现筛选逻辑
+                });
+            }
+
+            // 搜索功能
+            const searchInput = document.querySelector('.graph-search');
+            const searchBtn = document.querySelector('.graph-controls .search-btn');
+            
+            function performSearch() {
+                if (!searchInput) return;
+                
+                const keyword = searchInput.value.trim();
+                if (!keyword) {
+                    // 如果搜索关键词为空，返回初始视图
+                    if (window.KGViews) {
+                        window.KGViews.showInitialView();
+                    }
+                    return;
+                }
+                
+                console.log('搜索关键词:', keyword);
+                
+                // 获取缓存
+                if (!window.KGCache || !window.KGCache.cache) {
+                    console.warn('知识图谱缓存未加载');
+                    return;
+                }
+                
+                const cache = window.KGCache.cache;
+                const keywordLower = keyword.toLowerCase();
+                
+                // 搜索匹配的节点
+                const matchedNodes = [];
+                const matchedNodeIds = new Set();
+                
+                cache.allNodes.forEach(node => {
+                    const label = (node.data.label || node.data.name || node.data.名称 || '').toLowerCase();
+                    const name = (node.data.name || node.data.姓名 || node.data.名称 || '').toLowerCase();
+                    
+                    if (label.includes(keywordLower) || name.includes(keywordLower)) {
+                        matchedNodes.push(node);
+                        matchedNodeIds.add(node.data.id);
+                    }
+                });
+                
+                console.log(`找到 ${matchedNodes.length} 个匹配节点`);
+                
+                if (matchedNodes.length === 0) {
+                    alert(`未找到与"${keyword}"相关的节点`);
+                    return;
+                }
+                
+                // 找到匹配节点的所有关系（去重）
+                const matchedEdgesMap = new Map(); // 使用 Map 来去重，以 edge.data.id 或生成的ID作为key
+                cache.allEdges.forEach(edge => {
+                    const hasSource = matchedNodeIds.has(edge.data.source);
+                    const hasTarget = matchedNodeIds.has(edge.data.target);
+                    
+                    if (hasSource || hasTarget) {
+                        // 使用 edge.data.id 如果存在，否则生成唯一ID（与渲染器保持一致）
+                        // 渲染器使用格式: source-label-target，这里保持一致
+                        const edgeId = edge.data.id || `${edge.data.source}-${edge.data.label || ''}-${edge.data.target}`;
+                        // 只有当这条边还没有被添加时才添加
+                        if (!matchedEdgesMap.has(edgeId)) {
+                            matchedEdgesMap.set(edgeId, edge);
+                        }
+                    }
+                });
+                
+                const matchedEdges = Array.from(matchedEdgesMap.values());
+                
+                // 获取所有相关的节点（包括关系的另一端）
+                const relatedNodeIds = new Set(matchedNodeIds);
+                matchedEdges.forEach(edge => {
+                    if (matchedNodeIds.has(edge.data.source)) {
+                        relatedNodeIds.add(edge.data.target);
+                    }
+                    if (matchedNodeIds.has(edge.data.target)) {
+                        relatedNodeIds.add(edge.data.source);
+                    }
+                });
+                
+                // 构建搜索结果视图（节点去重）
+                const resultNodeIds = new Set();
+                const resultNodes = [];
+                cache.allNodes.forEach(node => {
+                    if (relatedNodeIds.has(node.data.id) && !resultNodeIds.has(node.data.id)) {
+                        resultNodeIds.add(node.data.id);
+                        resultNodes.push(node);
+                    }
+                });
+                
+                const resultEdges = matchedEdges;
+                
+                console.log(`搜索结果: ${resultNodes.length} 个节点, ${resultEdges.length} 条关系`);
+                
+                // 渲染搜索结果
+                if (window.KGRenderer) {
+                    window.KGRenderer.render(resultNodes, resultEdges);
+                }
+            }
+            
+            if (searchBtn && searchInput) {
+                searchBtn.addEventListener('click', performSearch);
+                searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+            }
+
+            // 延迟填充：等待 data-loader 构建 KGCache 完成
+            setTimeout(fillEventSetSelect, 400);
+            setTimeout(() => {
+                try {
+                    if (!window.KGCache || !window.KGCache.cache) return;
+                    const cache = window.KGCache.cache;
+                    const nodes = cache.allNodes || [];
+                    const edges = cache.allEdges || [];
+
+                    const nodeTypeCount = nodes.reduce((acc, n) => {
+                        const t = (n && n.data && n.data.type) ? n.data.type : 'unknown';
+                        acc[t] = (acc[t] || 0) + 1;
+                        return acc;
+                    }, {});
+
+                    const edgeLabelCount = edges.reduce((acc, e) => {
+                        const t = (e && e.data && (e.data.label || e.data.type)) ? (e.data.label || e.data.type) : 'unknown';
+                        acc[t] = (acc[t] || 0) + 1;
+                        return acc;
+                    }, {});
+
+                    const edgeLabelTop = Object.entries(edgeLabelCount)
+                        .sort((a, b) => (b[1] || 0) - (a[1] || 0))
+                        .slice(0, 12);
+
+                    const eventSetCount = nodes.filter(n => n && n.data && n.data.isEventSet === true).length;
+                    const numericIdNodes = nodes.filter(n => /^\d+$/.test(String(n?.data?.id || ''))).length;
+
+                    console.group('知识图谱数据概览（用于排查“数据混乱”）');
+                    console.log('节点总数:', nodes.length, '关系总数:', edges.length);
+                    console.log('节点类型统计:', nodeTypeCount);
+                    console.log('事件集数量:', eventSetCount);
+                    console.log('纯数字ID节点数量(可能为内部索引):', numericIdNodes);
+                    console.log('关系类型 Top(按 label):', edgeLabelTop);
+                    console.groupEnd();
+                } catch (e) {
+                    console.warn('知识图谱统计输出失败:', e);
+                }
+            }, 700);
+            
+            // 延展关系开关按钮（设置全局标志位，并立即刷新当前视图）
+            const extendToggle = document.getElementById('kg-extend-toggle');
+            if (extendToggle) {
+                window.__kgExtendRelations = false;
+                extendToggle.addEventListener('click', function () {
+                    window.__kgExtendRelations = !window.__kgExtendRelations;
+                    if (window.__kgExtendRelations) {
+                        extendToggle.textContent = '关闭延展关系';
+                        extendToggle.style.backgroundColor = '#2563eb';
+                        extendToggle.style.color = '#ffffff';
+                    } else {
+                        extendToggle.textContent = '展开延展关系';
+                        extendToggle.style.backgroundColor = '';
+                        extendToggle.style.color = '';
+                    }
+                    console.log('延展关系模式:', window.__kgExtendRelations);
+                    
+                    // 立即刷新当前视图，显示/隐藏延展关系
+                    const views = window.KGViews;
+                    if (views) {
+                        const currentView = views.getCurrentView();
+                        if (currentView) {
+                            // 根据当前视图类型重新渲染
+                            if (currentView.type === 'event' && currentView.centerId) {
+                                views.showEventView(currentView.centerId);
+                            } else if (currentView.type === 'eventSet' && currentView.centerId) {
+                                views.showEventSetView(currentView.centerId);
+                            } else if ((currentView.type === 'person' || currentView.type === 'location') && currentView.centerId) {
+                                views.showPersonLocationView(currentView.centerId);
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

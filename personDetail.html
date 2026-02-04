@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人物详情 - 皖北军事环境成因知识图谱平台</title>
+    <meta name="description" content="查看历史人物的详细信息、相关事件和知识图谱">
+    <meta name="keywords" content="人物详情,历史人物,知识图谱">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="page-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" onerror="this.onerror=null; this.href='';">
+    <style>
+        .person-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 人物卡片头部 */
+        .person-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .person-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .person-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .person-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .person-role {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        .person-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 1px solid #667eea;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* 标签页导航 */
+        .tab-nav {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 2px solid #e5e7eb;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6b7280;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .tab-button:hover {
+            color: #667eea;
+        }
+
+        .tab-button.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 内容区域 */
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+
+        .detail-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .detail-value {
+            color: #1f2937;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        /* 事件列表 */
+        .event-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .event-item {
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 8px;
+            border-left: 4px solid #ef4444;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .event-item:hover {
+            background: #f3f4f6;
+            transform: translateX(4px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .event-name {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-meta {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .event-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
+        .event-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 知识图谱链接按钮 */
+        .graph-link-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .graph-link-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #6b7280;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            color: #6b7280;
+        }
+
+        .error {
+            text-align: center;
+            padding: 4rem;
+            color: #ef4444;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .person-detail-container {
+                padding: 1rem;
+            }
+
+            .person-name {
+                font-size: 2rem;
+            }
+
+            .tab-nav {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                width: 100%;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="导航栏/LOGO@目录用.svg" alt="LOGO" class="logo-img">
+                <img src="导航栏/皖北军事环境成因知识图谱.png" alt="皖北军事环境成因知识图谱" class="logo-title">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="overview.html" class="nav-link">数据概览</a></li>
+                <li><a href="events.html" class="nav-link">历史事件</a></li>
+                <li><a href="map-interactive.html" class="nav-link">地理地图</a></li>
+                <li><a href="map-canvas.html" class="nav-link">事件分布</a></li>
+                <li><a href="persons.html" class="nav-link active">人物名片</a></li>
+                <li><a href="knowledgeGraph.html" class="nav-link">知识图谱</a></li>
+                <li><a href="http://localhost:3000" target="_blank" class="nav-link">实际系统</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="切换导航菜单" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="page-container">
+        <div class="page-content">
+            <div class="person-detail-container">
+                <a href="persons.html" class="back-link">← 返回人物列表</a>
+                
+                <div id="loading" class="loading">加载中...</div>
+                <div id="error" class="error" style="display: none;">数据加载失败，请稍后重试。</div>
+                
+                <div id="personContent" style="display: none;">
+                    <!-- 人物卡片头部 -->
+                    <div class="person-card-header">
+                        <div class="person-card-content">
+                            <h1 class="person-name" id="personName">人物名称</h1>
+                            <div class="person-role" id="personRole">身份</div>
+                            <div class="person-meta" id="personMeta"></div>
+                        </div>
+                    </div>
+
+                    <!-- 标签页导航 -->
+                    <div class="tab-nav">
+                        <button class="tab-button active" data-tab="intro">人物介绍</button>
+                        <button class="tab-button" data-tab="events">人物大事件</button>
+                        <button class="tab-button" data-tab="graph">人物图谱</button>
+                    </div>
+
+                    <!-- 标签页内容 -->
+                    <!-- 人物介绍 -->
+                    <div id="tab-intro" class="tab-content active">
+                        <div class="content-section">
+                            <h2 class="section-title">基本信息</h2>
+                            <div id="personIntro"></div>
+                        </div>
+                    </div>
+
+                    <!-- 人物大事件 -->
+                    <div id="tab-events" class="tab-content">
+                        <div class="content-section">
+                            <h2 class="section-title">相关历史事件</h2>
+                            <div id="personEvents" class="event-list"></div>
+                        </div>
+                    </div>
+
+                    <!-- 人物图谱 -->
+                    <div id="tab-graph" class="tab-content">
+                        <div class="content-section">
+                            <h2 class="section-title">知识图谱</h2>
+                            <p class="detail-value">查看该人物在知识图谱中的关联关系：</p>
+                            <a id="graphLink" href="#" class="graph-link-btn" target="_blank">查看知识图谱 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="index.html">首页</a>
+                <span>丨</span>
+                <a href="overview.html">数据概览</a>
+                <span>丨</span>
+                <a href="events.html">历史事件</a>
+                <span>丨</span>
+                <a href="map-interactive.html">地理地图</a>
+                <span>丨</span>
+                <a href="persons.html">人物名片</a>
+            </div>
+            <p class="footer-copyright">©2025 皖北军事环境成因知识图谱平台</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="data-loader.js"></script>
+    <script>
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const personId = urlParams.get('id');
+            
+            if (!personId) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent = '缺少人物ID参数';
+                return;
+            }
+
+            let personData = null;
+            let allEvents = [];
+            let allRelationships = [];
+
+            // 标签页切换
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+                    
+                    // 更新按钮状态
+                    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // 更新内容显示
+                    document.querySelectorAll('.tab-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(`tab-${tabId}`).classList.add('active');
+                });
+            });
+
+            // 加载人物详情
+            async function loadPersonDetail() {
+                try {
+                    console.log('开始加载人物详情，ID:', personId);
+                    
+                    // 等待数据加载
+                    let data = null;
+                    if (typeof window.normalizedData !== 'undefined' && window.normalizedData) {
+                        data = { combined: window.normalizedData };
+                    } else {
+                        const response = await fetch('data.json');
+                        if (!response.ok) {
+                            throw new Error(`HTTP错误: ${response.status}`);
+                        }
+                        data = await response.json();
+                    }
+
+                    // 获取人物数据
+                    let persons = [];
+                    if (data.combined && data.combined.persons) {
+                        persons = data.combined.persons;
+                    } else if (data.combined && data.combined.nodes) {
+                        persons = data.combined.nodes.filter(n => 
+                            n.labels && n.labels.some(l => l.includes('人物'))
+                        );
+                    }
+
+                    // 获取事件数据
+                    if (data.combined && data.combined.events) {
+                        allEvents = data.combined.events;
+                    }
+
+                    // 获取关系数据
+                    if (data.combined && data.combined.relationships) {
+                        allRelationships = data.combined.relationships;
+                    }
+
+                    // 查找人物
+                    const person = persons.find(p => {
+                        const id = p.id;
+                        return id === personId || 
+                               id === parseInt(personId) || 
+                               id === String(personId) ||
+                               String(id) === String(personId) ||
+                               (p.properties && (p.properties.id === personId || String(p.properties.id) === String(personId)));
+                    });
+
+                    if (!person) {
+                        throw new Error(`未找到ID为 ${personId} 的人物`);
+                    }
+
+                    personData = person;
+                    displayPerson(person);
+
+                } catch (error) {
+                    console.error('加载人物详情失败:', error);
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').textContent = error.message || '数据加载失败，请稍后重试。';
+                }
+            }
+
+            function displayPerson(person) {
+                const props = person.properties || {};
+                const name = props.姓名 || props.name || '未知人物';
+                const role = props.身份 || props.角色 || props.类型 || '历史人物';
+                const desc = props.描述 || props.description || '';
+
+                // 更新头部信息
+                document.getElementById('personName').textContent = name;
+                document.getElementById('personRole').textContent = role;
+
+                // 更新元信息
+                const metaItems = [];
+                if (props.时代) metaItems.push(`<div class="meta-item"><span>时代:</span><span>${props.时代}</span></div>`);
+                if (props.地区) metaItems.push(`<div class="meta-item"><span>地区:</span><span>${props.地区}</span></div>`);
+                document.getElementById('personMeta').innerHTML = metaItems.join('');
+
+                // 人物介绍标签页
+                let introHtml = '';
+                if (desc) {
+                    introHtml += `<div class="detail-item">
+                        <div class="detail-label">人物简介</div>
+                        <div class="detail-value">${desc}</div>
+                    </div>`;
+                }
+
+                // 显示其他属性
+                const excludedKeys = ['姓名', 'name', 'id', '描述', 'description', '身份', '角色', '类型', '时代', '地区'];
+                const otherProps = Object.keys(props).filter(key => 
+                    !excludedKeys.includes(key) && 
+                    props[key] !== null && 
+                    props[key] !== '' &&
+                    typeof props[key] !== 'object'
+                );
+
+                if (otherProps.length > 0) {
+                    otherProps.forEach(key => {
+                        introHtml += `<div class="detail-item">
+                            <div class="detail-label">${key}</div>
+                            <div class="detail-value">${props[key]}</div>
+                        </div>`;
+                    });
+                }
+
+                if (!introHtml) {
+                    introHtml = '<div class="empty-state">暂无详细信息</div>';
+                }
+
+                document.getElementById('personIntro').innerHTML = introHtml;
+
+                // 加载相关事件
+                loadRelatedEvents(person.id || props.id || personId);
+
+                // 设置知识图谱链接
+                const graphLink = document.getElementById('graphLink');
+                const personNameEncoded = encodeURIComponent(name);
+                graphLink.href = `knowledgeGraph.html#${personNameEncoded}&人物+${personNameEncoded}-${personId}`;
+
+                // 显示内容
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('personContent').style.display = 'block';
+            }
+
+            function loadRelatedEvents(personId) {
+                if (!allRelationships || allRelationships.length === 0 || !allEvents || allEvents.length === 0) {
+                    document.getElementById('personEvents').innerHTML = '<div class="empty-state">暂无相关事件数据</div>';
+                    return;
+                }
+
+                // 找到与人物相关的事件关系
+                const personIdStr = String(personId);
+                const relatedEventIds = new Set();
+                
+                allRelationships.forEach(rel => {
+                    const startId = String(rel.start || rel.from || '');
+                    const endId = String(rel.end || rel.to || '');
+                    
+                    if (startId === personIdStr) {
+                        // 人物指向事件
+                        if (allEvents.find(e => String(e.id) === endId)) {
+                            relatedEventIds.add(endId);
+                        }
+                    } else if (endId === personIdStr) {
+                        // 事件指向人物
+                        if (allEvents.find(e => String(e.id) === startId)) {
+                            relatedEventIds.add(startId);
+                        }
+                    }
+                });
+
+                const relatedEvents = allEvents.filter(e => relatedEventIds.has(String(e.id)));
+
+                if (relatedEvents.length === 0) {
+                    document.getElementById('personEvents').innerHTML = '<div class="empty-state">暂无相关事件</div>';
+                    return;
+                }
+
+                // 渲染事件列表
+                const eventsHtml = relatedEvents.map(event => {
+                    const eventProps = event.properties || {};
+                    const eventName = eventProps.名称 || eventProps.name || eventProps.事件名称 || '未知事件';
+                    const eventTime = eventProps.时间 || eventProps.发生时间 || eventProps.time || '';
+                    const eventDesc = eventProps.描述 || eventProps.description || '';
+                    
+                    return `<div class="event-item">
+                        <div class="event-name">${eventName}</div>
+                        ${eventTime ? `<div class="event-meta">时间: ${eventTime}</div>` : ''}
+                        ${eventDesc ? `<div class="event-meta" style="margin-top: 0.5rem;">${eventDesc.length > 100 ? eventDesc.substring(0, 100) + '...' : eventDesc}</div>` : ''}
+                        <a href="eventDetail.html?id=${event.id}" class="event-link">查看详情 →</a>
+                    </div>`;
+                }).join('');
+
+                document.getElementById('personEvents').innerHTML = eventsHtml;
+            }
+
+            // 执行加载
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', loadPersonDetail);
+            } else {
+                loadPersonDetail();
+            }
+        })();
+    </script>
+</body>
+</html>

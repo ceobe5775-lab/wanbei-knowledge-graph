@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "description": "数据管理系统配置文件",
+  "data_file": "data.json",
+  "source_dir": "data/source",
+  "releases_dir": "data/releases",
+  "backups_dir": "data/backups",
+  "validation": {
+    "check_duplicate_ids": true,
+    "check_orphaned_nodes": true,
+    "check_coordinate_range": true,
+    "check_relationship_references": true
+  },
+  "merge_strategy": "append",
+  "auto_backup": true,
+  "schema": {
+    "node_labels": ["人物", "事件", "地点", "组织"],
+    "required_node_properties": {
+      "人物": ["姓名", "id"],
+      "事件": ["名称", "id"],
+      "地点": ["名称", "id"]
+    },
+    "coordinate_range": {
+      "lat": [-90, 90],
+      "lng": [-180, 180]
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

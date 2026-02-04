@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoJSON 边界预览</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .header {
+            background: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .file-selector {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .file-selector label {
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .file-selector select {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+            min-width: 250px;
+        }
+        
+        .file-selector select:hover {
+            border-color: #4CAF50;
+        }
+        
+        .info-panel {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin: 10px 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .info-panel h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .info-value {
+            color: #333;
+        }
+        
+        #map {
+            height: calc(100vh - 200px);
+            margin: 10px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .legend {
+            background: white;
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px 0;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>GeoJSON 边界预览工具</h1>
+        <div class="file-selector">
+            <label for="geojsonFile">选择 GeoJSON 文件:</label>
+            <select id="geojsonFile">
+                <option value="boundaries/安徽省.json">安徽省 (boundaries/安徽省.json)</option>
+                <option value="six_cities_from_anhui.geojson" selected>皖北六市 (从安徽省提取) - six_cities_from_anhui.geojson</option>
+                <option value="six_cities_boundaries.geojson">六个城市边界 (six_cities_boundaries.geojson)</option>
+                <option value="wanbei-boundaries.geojson">皖北边界 (wanbei-boundaries.geojson)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="info-panel" id="infoPanel" style="display: none;">
+        <h3>文件信息</h3>
+        <div id="infoContent"></div>
+    </div>
+    
+    <div id="map"></div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        let map = null;
+        let geoJsonLayer = null;
+        
+        // 城市颜色映射
+        const cityColors = {
+            // 皖北六市
+            '蚌埠市': '#FF6B6B',
+            '亳州市': '#4ECDC4',
+            '阜阳市': '#45B7D1',
+            '淮北市': '#FFA07A',
+            '淮南市': '#98D8C8',
+            '宿州市': '#F7DC6F',
+            // 安徽省其他城市
+            '合肥市': '#E74C3C',
+            '芜湖市': '#3498DB',
+            '马鞍山市': '#9B59B6',
+            '淮安市': '#1ABC9C',
+            '铜陵市': '#F39C12',
+            '安庆市': '#E67E22',
+            '黄山市': '#16A085',
+            '滁州市': '#27AE60',
+            '阜阳市': '#45B7D1',
+            '宿州市': '#F7DC6F',
+            '六安市': '#8E44AD',
+            '亳州市': '#4ECDC4',
+            '池州市': '#D35400',
+            '宣城市': '#C0392B'
+        };
+        
+        // 初始化地图
+        function initMap() {
+            // 默认视图：安徽省中心位置
+            map = L.map('map').setView([31.5, 117.5], 7);
+            
+            // 添加底图图层
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 18
+            }).addTo(map);
+        }
+        
+        // 加载 GeoJSON 文件
+        async function loadGeoJSON(filename) {
+            try {
+                // 移除旧图层
+                if (geoJsonLayer) {
+                    map.removeLayer(geoJsonLayer);
+                }
+                
+                // 加载文件
+                const response = await fetch(filename);
+                const geoJsonData = await response.json();
+                
+                // 显示文件信息
+                displayFileInfo(geoJsonData);
+                
+                // 创建样式函数
+                function styleFeature(feature) {
+                    const cityName = feature.properties.name || '未知';
+                    const color = cityColors[cityName] || '#95A5A6';
+                    
+                    return {
+                        fillColor: color,
+                        color: '#333',
+                        weight: 2,
+                        opacity: 0.8,
+                        fillOpacity: 0.4
+                    };
+                }
+                
+                // 添加 GeoJSON 图层
+                geoJsonLayer = L.geoJSON(geoJsonData, {
+                    style: styleFeature,
+                    onEachFeature: function(feature, layer) {
+                        const props = feature.properties;
+                        const cityName = props.name || '未知';
+                        const center = props.center || props.centroid || [0, 0];
+                        
+                        // 添加弹出窗口
+                        const popupContent = `
+                            <div style="min-width: 200px;">
+                                <h3 style="margin: 0 0 10px 0; color: #333;">${cityName}</h3>
+                                ${props.adcode ? `<p><strong>行政区代码:</strong> ${props.adcode}</p>` : ''}
+                                ${props.level ? `<p><strong>级别:</strong> ${props.level}</p>` : ''}
+                                ${center[0] ? `<p><strong>中心坐标:</strong> [${center[0].toFixed(4)}, ${center[1].toFixed(4)}]</p>` : ''}
+                            </div>
+                        `;
+                        layer.bindPopup(popupContent);
+                        
+                        // 鼠标悬停效果
+                        layer.on({
+                            mouseover: function(e) {
+                                const layer = e.target;
+                                layer.setStyle({
+                                    weight: 4,
+                                    fillOpacity: 0.6
+                                });
+                            },
+                            mouseout: function(e) {
+                                geoJsonLayer.resetStyle(e.target);
+                            }
+                        });
+                    }
+                }).addTo(map);
+                
+                // 自动调整地图视图以适应所有边界
+                map.fitBounds(geoJsonLayer.getBounds(), {
+                    padding: [50, 50]
+                });
+                
+            } catch (error) {
+                console.error('加载 GeoJSON 文件失败:', error);
+                alert('加载文件失败: ' + error.message);
+            }
+        }
+        
+        // 显示文件信息
+        function displayFileInfo(geoJsonData) {
+            const infoPanel = document.getElementById('infoPanel');
+            const infoContent = document.getElementById('infoContent');
+            
+            if (!geoJsonData.features || geoJsonData.features.length === 0) {
+                infoPanel.style.display = 'none';
+                return;
+            }
+            
+            const features = geoJsonData.features;
+            const cities = features.map(f => f.properties.name || '未知').filter((v, i, a) => a.indexOf(v) === i);
+            
+            infoContent.innerHTML = `
+                <div class="info-item">
+                    <span class="info-label">类型:</span>
+                    <span class="info-value">${geoJsonData.type || 'FeatureCollection'}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">要素数量:</span>
+                    <span class="info-value">${features.length}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">城市列表:</span>
+                    <span class="info-value">${cities.join(', ')}</span>
+                </div>
+            `;
+            
+            infoPanel.style.display = 'block';
+        }
+        
+        // 文件选择器事件
+        document.getElementById('geojsonFile').addEventListener('change', function(e) {
+            loadGeoJSON(e.target.value);
+        });
+        
+        // 初始化
+        initMap();
+        loadGeoJSON('six_cities_from_anhui.geojson');
+    </script>
+</body>
+</html>
+

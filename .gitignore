@@ -1,0 +1,28 @@
+# local / generated
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+Thumbs.db
+
+# python venvs
+venv/
+backend/venv/
+
+# large local backups (do not publish)
+data/backups/
+
+# node
+node_modules/
+
+# editor
+.vscode/
+*.bak
+*.local.bak
+.gitignore_data
+
+# windows scripts not needed for pages
+*.bat
+*.ps1
+*.sh
+

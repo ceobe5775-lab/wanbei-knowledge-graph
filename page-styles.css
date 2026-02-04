@@ -1,0 +1,1128 @@
+/* 页面通用样式 */
+.page-container {
+    min-height: calc(100vh - 200px);
+    padding-top: 80px;
+}
+
+.page-header {
+    /* 默认背景（用于向后兼容） */
+    background: 
+        url('images/header-index.png') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+    color: var(--text-on-dark);
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 205px;
+    display: flex;
+    align-items: center;
+}
+
+/* 数据概览页面 - 统计图表/数据表格主题 */
+.page-header-overview {
+    background: 
+        url('images/header-overview.png') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-position: 50% 60%, 0 0, 0 0, 0 0, 0 0, 0 0;
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 历史事件页面 - 时间轴/历史文档主题 */
+.page-header-events {
+    background: 
+        url('images/header-events.png') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 地理地图页面 - 地图/地理主题 */
+.page-header-map {
+    background: 
+        url('images/header-map-interactive.png') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 事件分布页面 - 热力图/分布图主题 */
+.page-header-distribution {
+    background: 
+        url('images/header-distribution.png') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-position: 50% 60%, 0 0, 0 0, 0 0, 0 0, 0 0;
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 人物名片页面 - 人物肖像/历史人物主题 */
+.page-header-persons {
+    background: 
+        url('images/header-persons.png') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+/* 知识图谱页面 - 网络图/关联关系主题 */
+.page-header-knowledge {
+    background: 
+        url('images/header-knowledge.png') center/cover no-repeat,
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.85) 0%, 
+            rgba(93, 64, 55, 0.8) 50%,
+            rgba(62, 39, 35, 0.85) 100%),
+        repeating-linear-gradient(0deg, 
+            transparent, 
+            transparent 2px, 
+            rgba(139, 69, 19, 0.05) 2px, 
+            rgba(139, 69, 19, 0.05) 4px),
+        linear-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.1) 1px, transparent 1px);
+    background-size: 
+        cover,
+        100% 100%,
+        100% 100%,
+        40px 40px,
+        40px 40px;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 古籍边缘效果 + 色调统一遮罩 */
+    background: 
+        radial-gradient(ellipse at top, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+        radial-gradient(ellipse at bottom, rgba(139, 69, 19, 0.15) 0%, transparent 40%),
+        /* 色调统一遮罩 - 确保图片色调与主题一致（棕色/古铜色） */
+        linear-gradient(135deg, 
+            rgba(62, 39, 35, 0.25) 0%, 
+            rgba(93, 64, 55, 0.2) 50%,
+            rgba(62, 39, 35, 0.25) 100%);
+    opacity: 0.75;
+    z-index: 0;
+}
+
+.page-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* 文字下方深土棕渐变遮罩 - 左边深，右边淡且透明 */
+    background: linear-gradient(
+        to right,
+        rgba(62, 39, 35, 0.7) 0%,
+        rgba(62, 39, 35, 0.5) 30%,
+        rgba(62, 39, 35, 0.3) 60%,
+        rgba(62, 39, 35, 0.1) 80%,
+        transparent 100%
+    );
+    z-index: 0;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Serif SC', serif;
+    color: var(--text-on-dark);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    font-family: 'Noto Sans SC', sans-serif;
+    color: var(--text-on-dark);
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.page-content {
+    padding: 2rem 0;
+}
+
+/* 数据概览页面 */
+.stats-section {
+    margin-bottom: 3rem;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-box {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-paper);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.stat-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-red));
+    border-radius: 12px 12px 0 0;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-dark);
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.stat-unit {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.data-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.category-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-paper);
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.category-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-dark);
+}
+
+.category-card:hover::after {
+    transform: scaleX(1);
+}
+
+.category-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.category-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.category-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.category-link:hover {
+    color: var(--primary-dark);
+}
+
+.detail-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.detail-link-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.detail-link-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.link-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.link-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.link-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* 时间轴页面 */
+.timeline-section {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.timeline-section::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(93, 64, 55, 0.6);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background: rgba(212, 175, 55, 0.8);
+    border-radius: 50%;
+    border: 2px solid rgba(93, 64, 55, 0.8);
+    box-shadow: 0 0 0 3px var(--bg-paper);
+}
+
+.timeline-year {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.timeline-year:empty {
+    display: none;
+}
+
+.timeline-content {
+    background: var(--bg-white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-paper);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0.8), rgba(139, 69, 19, 0.6));
+    border-radius: 12px 0 0 12px;
+    z-index: 1;
+}
+
+.timeline-content:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateX(5px);
+    border-color: var(--border-dark);
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 600;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.timeline-detail {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.timeline-link {
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    font-family: 'Noto Sans SC', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.timeline-link:hover {
+    color: var(--accent-red);
+    gap: 0.75rem;
+}
+
+.load-more {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* 地图页面 */
+.map-controls {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.control-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.control-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.control-btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--border-color);
+    background: var(--bg-white);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.control-btn:hover,
+.control-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.control-select {
+    padding: 0.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-white);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.map-container {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+    min-height: 600px;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-content {
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.map-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.map-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.map-content p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.map-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.map-markers-preview {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.marker-preview {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+}
+
+.marker-event {
+    background: #ef4444;
+}
+
+.marker-person {
+    background: #f59e0b;
+}
+
+.marker-location {
+    background: #10b981;
+}
+
+.map-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.list-item {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.list-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.item-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.item-content {
+    flex: 1;
+}
+
+.item-content h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.item-content p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.item-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.item-link:hover {
+    color: var(--primary-dark);
+}
+
+/* 人物名片页面 */
+.filter-section {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.search-box {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.search-btn {
+    padding: 0.75rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-btn:hover {
+    background: var(--primary-dark);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-tag {
+    padding: 0.5rem 1rem;
+    background: var(--bg-light);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.filter-tag:hover,
+.filter-tag.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.person-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.person-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.person-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.person-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
+
+.person-info {
+    text-align: center;
+    flex: 1;
+}
+
+.person-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.person-role {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.person-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.person-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.person-link:hover {
+    color: var(--primary-dark);
+}
+
+/* 知识图谱页面 */
+.graph-controls {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.search-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.graph-search {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.filter-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.filter-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.graph-container {
+    background: #ffffff; /* Neo4j Browser 实际背景色（rect fill="none"，背景为白色） */
+    border-radius: 0; /* Neo4j Browser无圆角 */
+    overflow: hidden;
+    box-shadow: none; /* Neo4j Browser无阴影 */
+    margin-bottom: 2rem;
+    min-height: 600px;
+    border: none; /* Neo4j Browser无边框 */
+    position: relative;
+}
+
+.graph-placeholder {
+    width: 100%;
+    height: 600px;
+    background: #f5f5f5; /* Neo4j Browser风格背景 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Cytoscape容器样式（完全匹配Neo4j Browser） */
+#cy {
+    width: 100%;
+    height: 100%;
+    background: #ffffff; /* Neo4j Browser 实际背景色（rect fill="none"，背景为白色） */
+    cursor: grab;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* 性能优化 */
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+#cy:active {
+    cursor: grabbing;
+}
+
+/* Neo4j Browser精确canvas样式 */
+#cy canvas {
+    image-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Neo4j Browser节点样式覆盖（通过CSS变量精确控制） */
+#cy .cy-node {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 改进图例颜色以匹配新样式 */
+.event-color {
+    background: #ff6b6b;
+}
+
+.person-color {
+    background: #4ecdc4;
+}
+
+.location-color {
+    background: #95e1d3;
+}
+
+.time-color {
+    background: #a8e6cf;
+}
+
+.graph-content {
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.graph-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.graph-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.graph-content p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.graph-note {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.graph-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.event-color {
+    background: #ef4444;
+}
+
+.person-color {
+    background: #f59e0b;
+}
+
+.location-color {
+    background: #10b981;
+}
+
+.time-color {
+    background: #3b82f6;
+}
+
+.graph-tips {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.graph-tips h4 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.graph-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.graph-tips li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.graph-tips li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* 页脚 */
+.page-footer {
+    background: var(--text-primary);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-nav {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.footer-nav a:hover {
+    opacity: 1;
+}
+
+.footer-nav span {
+    opacity: 0.5;
+}
+
+.footer-copyright {
+    text-align: center;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .stats-row {
+        grid-template-columns: 1fr;
+    }
+
+    .data-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .map-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .person-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-section {
+        padding-left: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
